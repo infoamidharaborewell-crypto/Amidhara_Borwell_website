@@ -40,7 +40,7 @@ useEffect(() => {
         <div className="contact-info-wrapper" data-aos="fade-right">
           <div className="section-header">
             <h4>Get In Touch</h4>
-            <h1>Let's Plan Your <br /><span>Water Solution</span></h1>
+            <h2 className="text-3xl font-bold text-gray-900 mb-2">Contact Amidhara Borewell – 24/7 Support in Vadodara</h2>
             <p>
               Ready to start your drilling project? Reach out for a free consultation, 
               site inspection, or emergency repair.

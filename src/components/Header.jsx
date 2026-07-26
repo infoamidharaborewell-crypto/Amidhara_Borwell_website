@@ -21,21 +21,13 @@ const Header = ({ onNavigate, currentPage = 'home' }) => {
       <nav className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           
-          {/* Logo (Even Smaller + Responsive) */}
-<div className="flex items-center space-x-2">
-  <img
-    src={logo}
-    alt="Logo"
-    className="
-      w-12    /* default */
-      sm:w-14 /* small screens */
-      md:w-18 /* medium screens */
-      lg:w-22 /* large screens */
-      h-auto
-      object-contain
-    "
-  />
-</div>
+          {/* Logo Matching Reference Site */}
+          <div className="flex items-center space-x-3 cursor-pointer" onClick={() => scrollToSection('home')}>
+            <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center shadow-sm">
+              <span className="text-white font-bold text-xl">A</span>
+            </div>
+            <span className="text-2xl font-bold text-gray-900 tracking-tight">Amidhara Borewell</span>
+          </div>
 
 
           {/* Desktop Menu */}
@@ -99,7 +91,7 @@ const Header = ({ onNavigate, currentPage = 'home' }) => {
           {/* Mobile Menu Button */}
           <button
             className="md:hidden text-gray-700"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            onClick={() => setIsMenuOpen(!isMenuOpen)} 
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               {isMenuOpen ? (

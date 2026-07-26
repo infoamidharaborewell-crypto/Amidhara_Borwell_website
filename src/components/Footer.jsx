@@ -1,4 +1,5 @@
 import React from 'react'
+import { FaWhatsapp, FaFacebookF, FaInstagram } from 'react-icons/fa'
 
 const Footer = ({ onNavigate }) => {
   const scrollToSection = (id) => {
@@ -21,6 +22,27 @@ const Footer = ({ onNavigate }) => {
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
+        
+        {/* Pre-footer navigation prompt */}
+        <div className="text-center pb-8 mb-8 border-b border-gray-800 text-gray-300 text-base">
+          <p>
+            Have questions? Check our{' '}
+            <button 
+              onClick={() => scrollToSection('faq')}
+              className="text-blue-400 hover:underline font-medium"
+            >
+              FAQ Page
+            </button>{' '}
+            or explore our{' '}
+            <button 
+              onClick={() => scrollToSection('services')}
+              className="text-blue-400 hover:underline font-medium"
+            >
+              Services Section
+            </button>.
+          </p>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
 
           {/* Company Info */}
@@ -32,28 +54,46 @@ const Footer = ({ onNavigate }) => {
               <span className="text-2xl font-bold">Amidhara Borewell</span>
             </div>
 
-            <p className="text-gray-400 mb-4">
+            <p className="text-gray-400 mb-4 text-sm leading-relaxed">
               Your trusted partner for reliable water solutions. 
               Professional borewell services with years of expertise.
             </p>
 
-            <div className="flex space-x-4">
-              <a href="#" className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors">
-                <i className="fab fa-facebook-f text-white"></i>
+            <div className="flex space-x-3">
+              <a 
+                href="https://wa.me/919106604895" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-green-600 transition-colors"
+                title="WhatsApp"
+              >
+                <FaWhatsapp className="text-white text-lg" />
               </a>
-              <a href="#" className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors">
-                <i className="fab fa-twitter text-white"></i>
+              <a 
+                href="https://www.facebook.com/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors"
+                title="Facebook"
+              >
+                <FaFacebookF className="text-white text-base" />
               </a>
-              <a href="#" className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors">
-                <i className="fab fa-instagram text-white"></i>
+              <a 
+                href="https://www.instagram.com/amidhara_borewell?igsh=MWlzeGR2eWU1c3Juag==" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-pink-600 transition-colors"
+                title="Instagram"
+              >
+                <FaInstagram className="text-white text-lg" />
               </a>
             </div>
           </div>
 
           {/* Quick Links / Pages */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
-            <ul className="space-y-2">
+            <h3 className="text-lg font-semibold mb-4 text-blue-400">Quick Links</h3>
+            <ul className="space-y-2 text-sm">
               <li><button onClick={() => scrollToSection('home')} className="text-gray-400 hover:text-white transition-colors">Home</button></li>
               <li><button onClick={() => scrollToSection('services')} className="text-gray-400 hover:text-white transition-colors">Services</button></li>
               <li><button onClick={() => scrollToSection('gallery')} className="text-gray-400 hover:text-white transition-colors">Gallery</button></li>
@@ -66,8 +106,8 @@ const Footer = ({ onNavigate }) => {
 
           {/* Services */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Our Services</h3>
-            <ul className="space-y-2 text-gray-400">
+            <h3 className="text-lg font-semibold mb-4 text-blue-400">Our Services</h3>
+            <ul className="space-y-2 text-sm text-gray-400">
               <li>Borewell Drilling</li>
               <li>Installation Services</li>
               <li>Maintenance</li>
@@ -79,20 +119,21 @@ const Footer = ({ onNavigate }) => {
 
           {/* Contact Info */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Contact</h3>
-            <ul className="space-y-2 text-gray-400">
-              <li>+91 91066 04895</li>
+            <h3 className="text-lg font-semibold mb-4 text-blue-400">Contact Information</h3>
+            <ul className="space-y-2 text-sm text-gray-400">
+              <li className="font-semibold text-white">+91 91066 04895</li>
               <li>infoamidharaborewell@gmail.com</li>
-              <li>Sahajanand Krupa Society, F/120, Moti Nagar 1, Tarsali, Vadodara, Gujarat 390009</li>
+              <li className="pt-1 leading-relaxed">
+                Sahajanand Krupa Society, F/120, Tarsali, Vadodara, Gujarat 390009
+              </li>
             </ul>
           </div>
 
         </div>
 
         {/* Bottom */}
-        <div className="border-t border-gray-800 pt-8 mt-8 text-center text-gray-400">
+        <div className="border-t border-gray-800 pt-8 mt-8 text-center text-gray-400 text-sm">
           <p>© {new Date().getFullYear()} TEJASKP AI SOFTWARE - All rights reserved.</p>
-          
         </div>
       </div>
     </footer>
@@ -100,3 +141,4 @@ const Footer = ({ onNavigate }) => {
 }
 
 export default Footer
+

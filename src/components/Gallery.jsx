@@ -270,8 +270,8 @@ const Gallery = () => {
     document.body.style.overflow = "auto";
   };
 
-  const [show3DAnimation, setShow3DAnimation] = useState(true)
-  const [showGallery, setShowGallery] = useState(false)
+  const [show3DAnimation, setShow3DAnimation] = useState(false)
+  const [showGallery, setShowGallery] = useState(true)
 
   const handleAnimationComplete = () => {
     setShow3DAnimation(false)

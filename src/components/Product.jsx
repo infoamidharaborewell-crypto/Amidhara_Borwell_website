@@ -98,7 +98,7 @@ const Product = () => {
 
       <div className="products-page">
         <h2 className="text-5xl font-bold mb-5" data-aos="fade-down">
-          Our Products
+          Submersible Pumps &amp; Borewell Products in Vadodara
         </h2>
 
         <div className="products-container p-3">

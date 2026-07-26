@@ -1,100 +1,8 @@
-// import React, { Suspense } from 'react'
-// import WaterEffects from './WaterEffects'
-// import Scene3D from './Scene3D'
-// import Tractor3D from './Tractor3D'
-// import PhotoVideoGallery from './PhotoVideoGallery'
-// import { Canvas } from '@react-three/fiber'
-// import { Loader } from '@react-three/drei'
-// import service1 from "/service1.jpeg";
-// import service2 from "/service2.png";
-// import service3 from "/service3.webp";
-// import service4 from "/service4.jpg";
-// import service5 from "/service5.jpg";
-// import service6 from "/service6.jpeg";
-
-// const Services = () => {
-//   const services = [
-//   { title: "New Borewell Drilling", image: service1 },
-//   { title: "Commercial & Industrial Borewell Service", image: service2 },
-//   { title: "Borewell Recharging", image: service3 },
-//   { title: "Submersible Pump Installation", image: service4 },
-//   { title: "Borewell Repairing", image: service5 },
-//   { title: "Air Compressor in all Borewell", image: service6 }  ]
-
-//   return (
-//     <section id="services" className="py-20 bg-white relative overflow-hidden water-surface">
-//       <WaterEffects variant="waves" />
-//       <div className="water-bubbles">
-//         <div className="water-bubble"></div>
-//         <div className="water-bubble"></div>
-//         <div className="water-bubble"></div>
-//       </div>
-      
-//       {/* 3D Water Droplets */}
-//       <div className="absolute inset-0 w-full h-full z-0 pointer-events-none opacity-30">
-//         <div className="absolute top-20 right-10 w-64 h-64 md:w-96 md:h-96">
-//           <Scene3D showPump={false} showDroplets={true} />
-//         </div>
-//       </div>
-    
-//         {/* 3D Tractor Section - Prominent Display */}
-//         <div className="mt-20 mb-16">
-                  
-//           <div className="max-w-6xl mx-auto">
-//             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-//     <div className="services-page">
-//       {/* Header */}
-//       <div className="services-header">
-//         <h1>Our Services</h1>
-//         <p>Reliable borewell solutions across Gujarat</p>
-//       </div>
-//                     {/* 3D Tractor
-//               <div className="relative h-[500px] bg-gradient-to-br from-blue-50 to-white rounded-2xl shadow-2xl overflow-hidden tractor-3d-container">
-//                 <div className="absolute inset-0">
-//                   <Canvas
-//                     shadows
-//                     gl={{ antialias: true, alpha: true }}
-//                     camera={{ position: [0, 2, 5], fov: 50 }}
-//                     style={{ background: 'transparent' }}
-//                   >
-//                     <Suspense fallback={null}>
-//                       <Tractor3D />
-//                     </Suspense>
-//                   </Canvas>
-//                   <Loader />
-//                 </div>
-//                 <div className="absolute bottom-4 left-4 right-4 text-center">
-//                   <p className="text-gray-700 font-semibold bg-white/80 backdrop-blur-sm px-4 py-2 rounded-lg">
-//                     Interactive 3D Model - Drag to rotate, scroll to zoom
-//                   </p>
-//                 </div>
-//               </div> */}
-//       {/* Service Cards */}
-//       <div className="services-container">
-//         {services.map((service, index) => (
-//           <div className="service-card" key={index}>
-//             <div className="service-image">
-//               <img src={service.image} alt={service.title} />
-//             </div>
-//             <h3>{service.title}</h3>
-//           </div>
-//         ))}
-//       </div>
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//     </section>
-//   )
-// }
-
-// export default Services
-
-
-
-import React from 'react'
-import WaterEffects from './WaterEffects'
-import Scene3D from './Scene3D'
+import React, { Suspense } from 'react';
+import { Canvas } from '@react-three/fiber';
+import Tractor3D from './Tractor3D';
+import Scene3D from './Scene3D';
+import WaterEffects from './WaterEffects';
 import service1 from "/service1.jpeg";
 import service2 from "/service2.png";
 import service3 from "/service3.webp";
@@ -104,12 +12,44 @@ import service6 from "/service6.jpeg";
 
 const Services = () => {
   const services = [
-    { title: "New Borewell Drilling", image: service1 },
-    { title: "Commercial & Industrial Borewell Service", image: service2 },
-    { title: "Borewell Recharging", image: service3 },
-    { title: "Submersible Pump Installation", image: service4 },
-    { title: "Borewell Repairing", image: service5 },
-    { title: "Air Compressor in all Borewell", image: service6 }
+    {
+      title: "Borewell Drilling",
+      image: service1,
+      description: "Professional borewell drilling services in Vadodara using advanced hydraulic tractor-mounted rigs. We provide accurate and fast drilling for residential, industrial and agricultural water needs with expert groundwater guidance."
+    },
+    {
+      title: "Borewell Installation",
+      image: service2,
+      description: "Complete borewell installation services in Vadodara including submersible pump fitting, HDPE or PVC pipe setup, cable wiring and water connection with guaranteed performance and long-term reliability."
+    },
+    {
+      title: "Maintenance & Repair",
+      image: service3,
+      description: "Expert borewell repair and maintenance services in Vadodara to fix low water flow, pump failure, pipe blockage and motor issues. Quick on-site diagnosis and same-day service available."
+    },
+    {
+      title: "Water Testing",
+      image: service4,
+      description: "Professional water testing services in Vadodara to check drinking water quality, TDS levels, pH, impurities and suitability for domestic or industrial usage. Ensure safe and healthy water supply."
+    },
+    {
+      title: "Pump Services",
+      image: service5,
+      description: "Specialized submersible pump installation, repair and replacement services in Vadodara for all brands and capacities. We handle wiring, control panels, starters and automatic water flow systems."
+    },
+    {
+      title: "Emergency Services",
+      image: service6,
+      description: "24/7 emergency borewell and pump repair service across Vadodara. Immediate response for breakdowns, stuck motor issues, blocked pipes or sudden water loss — available day and night."
+    }
+  ];
+
+  const equipmentFeatures = [
+    "Modern tractor-mounted drilling rigs",
+    "High-capacity drilling equipment",
+    "Precision drilling technology",
+    "Mobile and versatile operation",
+    "Efficient and time-saving operations"
   ];
 
   return (
@@ -132,27 +72,132 @@ const Services = () => {
         </div>
       </div>
 
-      <div className="services-page">
-      {/* Header */}
-      <div className="services-header">
-        <h2 className='text-5xl font-bold mb-4'>Our Services</h2>
-        <p>Reliable borewell solutions across Gujarat</p>
-      </div>
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="max-w-4xl mx-auto text-center mb-16">
+          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
+            Best Borewell Drilling &amp; Pump Installation Services in Vadodara
+          </h2>
+          <p className="text-gray-700 text-lg leading-relaxed max-w-3xl mx-auto mb-6">
+            Amidhara Borewell is one of the leading borewell drilling contractors in Vadodara, Gujarat providing professional borewell drilling, pump installation, borewell maintenance, water testing and 24/7 emergency borewell services. With modern hydraulic tractor-mounted drilling equipment, we deliver fast and reliable solutions for residential, industrial and agricultural water needs.
+          </p>
+        </div>
 
-      {/* Service Cards */}
-      <div className="services-container">
-        {services.map((service, index) => (
-          <div className="service-cards" key={index}>
-            <div className="service-image">
-              <img src={service.image} alt={service.title} />
+        {/* Service Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto mb-20">
+          {services.map((service, index) => (
+            <div 
+              key={index}
+              className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col"
+            >
+              <div className="relative h-56 overflow-hidden">
+                <img 
+                  src={service.image} 
+                  alt={service.title} 
+                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end p-4">
+                  <h3 className="text-xl font-bold text-white drop-shadow">{service.title}</h3>
+                </div>
+              </div>
+              <div className="p-6 flex-1 flex flex-col justify-between">
+                <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                  {service.description}
+                </p>
+                <button 
+                  onClick={() => {
+                    const el = document.getElementById('contact');
+                    if (el) el.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                  className="inline-flex items-center text-blue-600 font-semibold hover:text-blue-800 text-sm"
+                >
+                  Book Service &rarr;
+                </button>
+              </div>
             </div>
-            <h3>{service.title}</h3>
+          ))}
+        </div>
+
+        {/* Advanced Equipment Section Matching Image 3 */}
+        <div className="max-w-6xl mx-auto mb-16">
+          <div className="text-center mb-10">
+            <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">Our Advanced Equipment</h3>
+            <p className="text-gray-600 text-base max-w-2xl mx-auto">
+              State-of-the-art drilling equipment powered by modern tractors for efficient and reliable service
+            </p>
           </div>
-        ))}
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+            {/* Left 3D Canvas Container */}
+            <div className="bg-gradient-to-br from-blue-200/80 via-blue-100/70 to-indigo-200/80 rounded-3xl p-4 border border-blue-200 shadow-xl relative min-h-[380px] flex flex-col justify-end overflow-hidden">
+              <div className="w-full h-full absolute inset-0">
+                <Canvas camera={{ position: [0, 2, 6], fov: 45 }}>
+                  <Suspense fallback={null}>
+                    <Tractor3D />
+                  </Suspense>
+                </Canvas>
+              </div>
+              <div className="relative z-10 mx-auto mb-2 bg-white/90 backdrop-blur px-5 py-2 rounded-full text-xs md:text-sm font-semibold text-gray-800 shadow-md border border-white/60 pointer-events-none">
+                Interactive 3D Model - Drag to rotate
+              </div>
+            </div>
+
+            {/* Right Features List Container */}
+            <div className="bg-white rounded-3xl p-8 md:p-10 shadow-xl border border-blue-100 flex flex-col justify-center">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">Equipment Features</h3>
+              <ul className="space-y-4">
+                {equipmentFeatures.map((feat, idx) => (
+                  <li key={idx} className="flex items-center space-x-3.5 text-gray-700 font-medium text-base">
+                    <div className="w-6 h-6 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center font-bold text-xs flex-shrink-0">
+                      ✓
+                    </div>
+                    <span>{feat}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        {/* Section Navigation Footer Text */}
+        <div className="text-center text-gray-600 max-w-3xl mx-auto">
+          <p className="text-base">
+            Want to see our real work results? View our successful projects in the{' '}
+            <button 
+              onClick={() => {
+                const el = document.getElementById('gallery');
+                if (el) el.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className="text-blue-600 font-semibold underline hover:text-blue-800"
+            >
+              Gallery
+            </button>
+            . Need expert guidance? Visit our{' '}
+            <button 
+              onClick={() => {
+                const el = document.getElementById('faq');
+                if (el) el.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className="text-blue-600 font-semibold underline hover:text-blue-800"
+            >
+              FAQ section
+            </button>{' '}
+            or{' '}
+            <button 
+              onClick={() => {
+                const el = document.getElementById('contact');
+                if (el) el.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className="text-blue-600 font-semibold underline hover:text-blue-800"
+            >
+              Contact Us
+            </button>.
+          </p>
+        </div>
+
       </div>
-    </div>
     </section>
   );
 };
 
 export default Services;
+

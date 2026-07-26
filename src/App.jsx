@@ -14,7 +14,7 @@ import ContactUs from './components/ContactUs'
 import WhatsappButton from './components/WhatsappButton'
 
 function App() {
-  const [showSplash, setShowSplash] = useState(true)
+  const [showSplash, setShowSplash] = useState(false)
   const [currentPage, setCurrentPage] = useState('home')
 
   const handleSplashComplete = () => {
@@ -23,14 +23,9 @@ function App() {
 
   const handleNavigation = (page) => {
     setCurrentPage(page)
-    if (page !== 'gallery') {
-      // Scroll to section for other pages
-      setTimeout(() => {
-        const element = document.getElementById(page)
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth' })
-        }
-      }, 100)
+    const element = document.getElementById(page)
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' })
     }
   }
 
@@ -42,20 +37,14 @@ function App() {
     <div className="min-h-screen bg-gray-50">
       <Logo3DSidebar />
       <Header onNavigate={handleNavigation} currentPage={currentPage} />
-      {currentPage === 'gallery' ? (
-        <Gallery />
-      ) : (
-        <>
-          <Hero />
-          <Services />
-          <About />
-          <Product/>
-          <FAQ/>
-          <ContactUs/>
-          <WhatsappButton/>
-          
-        </>
-      )}
+      <Hero />
+      <Services />
+      <Gallery />
+      <About />
+      <Product />
+      <FAQ />
+      <ContactUs />
+      <WhatsappButton />
       <Footer onNavigate={handleNavigation} />
     </div>
   )

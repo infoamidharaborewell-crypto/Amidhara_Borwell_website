@@ -14,13 +14,15 @@ const About = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold mb-4">About Amidhara Borewell</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Your trusted partner for reliable water solutions
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
+              Expert Borewell Contractors With 18+ Years Experience
+            </h2>
+            <p className="text-xl text-blue-600 font-semibold max-w-3xl mx-auto">
+              Trusted Borewell Contractor in Vadodara, Gujarat for Reliable Water Solutions
             </p>
           </div>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-12">
             <div>
               <h3 className="text-3xl font-bold text-gray-900 mb-6">Why Choose Amidhara Borewell?</h3>
               <p className="text-gray-700 mb-6 leading-relaxed">
@@ -41,7 +43,7 @@ const About = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
-                  <p className="ml-3 text-gray-700">Experienced and certified professionals</p>
+                  <p className="ml-3 text-gray-700 font-medium">Experienced and certified professionals</p>
                 </div>
                 <div className="flex items-start">
                   <div className="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
@@ -49,7 +51,7 @@ const About = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
-                  <p className="ml-3 text-gray-700">Modern equipment and technology</p>
+                  <p className="ml-3 text-gray-700 font-medium">Modern equipment and technology</p>
                 </div>
                 <div className="flex items-start">
                   <div className="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
@@ -57,7 +59,7 @@ const About = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
-                  <p className="ml-3 text-gray-700">Transparent pricing with no hidden costs</p>
+                  <p className="ml-3 text-gray-700 font-medium">Transparent pricing with no hidden costs</p>
                 </div>
                 <div className="flex items-start">
                   <div className="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
@@ -65,7 +67,7 @@ const About = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
-                  <p className="ml-3 text-gray-700">24/7 customer support and emergency services</p>
+                  <p className="ml-3 text-gray-700 font-medium">24/7 customer support and emergency services</p>
                 </div>
                 <div className="flex items-start">
                   <div className="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
@@ -73,31 +75,66 @@ const About = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
-                  <p className="ml-3 text-gray-700">100% customer satisfaction guarantee</p>
+                  <p className="ml-3 text-gray-700 font-medium">100% customer satisfaction guarantee</p>
                 </div>
               </div>
             </div>
             
-            <div className="bg-white p-8 rounded-xl shadow-lg water-shimmer water-reflection relative z-10">
-              <div className="space-y-6">
-                <div className="text-center">
-                  <div className="text-5xl font-bold text-blue-600 mb-2">500+</div>
-                  <div className="text-gray-700">Projects Completed</div>
+            <div className="bg-white p-8 rounded-xl shadow-lg water-shimmer water-reflection relative z-10 border border-blue-50">
+              <div className="grid grid-cols-2 gap-6 text-center">
+                <div className="p-4 rounded-lg bg-blue-50/50">
+                  <div className="text-4xl md:text-5xl font-bold text-blue-600 mb-2">1300+</div>
+                  <div className="text-gray-700 font-semibold text-sm">Projects Completed</div>
                 </div>
-                <div className="text-center">
-                  <div className="text-5xl font-bold text-blue-600 mb-2">15+</div>
-                  <div className="text-gray-700">Years of Experience</div>
+                <div className="p-4 rounded-lg bg-blue-50/50">
+                  <div className="text-4xl md:text-5xl font-bold text-blue-600 mb-2">18+</div>
+                  <div className="text-gray-700 font-semibold text-sm">Years of Experience</div>
                 </div>
-                <div className="text-center">
-                  <div className="text-5xl font-bold text-blue-600 mb-2">98%</div>
-                  <div className="text-gray-700">Customer Satisfaction</div>
+                <div className="p-4 rounded-lg bg-blue-50/50">
+                  <div className="text-4xl md:text-5xl font-bold text-blue-600 mb-2">98%</div>
+                  <div className="text-gray-700 font-semibold text-sm">Customer Satisfaction</div>
                 </div>
-                <div className="text-center">
-                  <div className="text-5xl font-bold text-blue-600 mb-2">24/7</div>
-                  <div className="text-gray-700">Support Available</div>
+                <div className="p-4 rounded-lg bg-blue-50/50">
+                  <div className="text-4xl md:text-5xl font-bold text-blue-600 mb-2">24/7</div>
+                  <div className="text-gray-700 font-semibold text-sm">Support Available</div>
                 </div>
               </div>
             </div>
+          </div>
+
+          <div className="text-center text-gray-600 max-w-3xl mx-auto pt-6 border-t border-gray-200">
+            <p className="text-base">
+              Learn more about our{' '}
+              <button 
+                onClick={() => {
+                  const el = document.getElementById('services');
+                  if (el) el.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="text-blue-600 font-semibold underline hover:text-blue-800"
+              >
+                Services
+              </button>
+              {' '}or view completed borewell projects in our{' '}
+              <button 
+                onClick={() => {
+                  const el = document.getElementById('gallery');
+                  if (el) el.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="text-blue-600 font-semibold underline hover:text-blue-800"
+              >
+                Gallery
+              </button>
+              . For pricing and consultation,{' '}
+              <button 
+                onClick={() => {
+                  const el = document.getElementById('contact');
+                  if (el) el.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="text-blue-600 font-semibold underline hover:text-blue-800"
+              >
+                Contact Us Today
+              </button>.
+            </p>
           </div>
         </div>
       </div>

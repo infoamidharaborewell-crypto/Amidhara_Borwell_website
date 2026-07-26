@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -632,8 +634,6 @@ canvas {
 
 /* contact css */
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&display=swap');
-
 .contact-page {
   font-family: 'Montserrat', sans-serif;
   position: relative;
@@ -910,8 +910,6 @@ canvas {
 
 
 /* gallery section */
-
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&display=swap');
 
 .gallery-page {
   width: 100%;
@@ -1270,7 +1268,7 @@ canvas {
   }
 }
 
-/* spinlogo */
+/* splash screen spinlogo */
 @keyframes spin3D {
   0% { transform: rotateY(0deg); }
   100% { transform: rotateY(360deg); }

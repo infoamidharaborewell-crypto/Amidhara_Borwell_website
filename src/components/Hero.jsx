@@ -32,11 +32,11 @@ const Hero = () => {
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center md:text-left">
-          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 relative" style={{ zIndex: 20 }}>
-            Amidhara Borewell
+          <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 relative leading-tight" style={{ zIndex: 20 }}>
+            Professional Borewell &amp; Pump Installation Services in Vadodara
           </h1>
           <p className="text-xl text-gray-700 mb-8 relative" style={{ zIndex: 20 }}>
-            We specialize in reliable borewell drilling, timely recharging, submersible pump installation, and comprehensive maintenance. We ensure accurate drilling and long-lasting water solutions with skilled experts and modern technology.
+            Your trusted partner for reliable water solutions. We provide expert borewell drilling, installation, and maintenance services with years of experience.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start relative" style={{ zIndex: 20 }}>
             <button
@@ -88,6 +88,40 @@ const Hero = () => {
             <h3 className="text-xl font-semibold text-gray-800 mb-2 text-center">Affordable Prices</h3>
             <p className="text-gray-600 text-center">Competitive pricing with transparent quotes</p>
           </div>
+        </div>
+
+        {/* Borewell Services Across Vadodara - Inside Blue Hero Background */}
+        <div className="text-center mt-12 mb-6 relative z-20 max-w-4xl mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-blue-950 mb-3 tracking-tight">
+            Borewell Services Across Vadodara
+          </h2>
+          <p className="text-gray-700 text-base md:text-lg leading-relaxed">
+            We provide expert <strong className="font-semibold text-gray-900">borewell drilling and submersible pump services in Vadodara</strong>. Explore our complete list of solutions on our{' '}
+            <a
+              href="#services"
+              onClick={(e) => {
+                e.preventDefault()
+                const el = document.getElementById('services')
+                if (el) el.scrollIntoView({ behavior: 'smooth' })
+              }}
+              className="text-blue-600 font-semibold underline hover:text-blue-800 transition-colors"
+            >
+              Service
+            </a>{' '}
+            or{' '}
+            <a
+              href="#contact"
+              onClick={(e) => {
+                e.preventDefault()
+                const el = document.getElementById('contact')
+                if (el) el.scrollIntoView({ behavior: 'smooth' })
+              }}
+              className="text-blue-600 font-semibold underline hover:text-blue-800 transition-colors"
+            >
+              Contact
+            </a>{' '}
+            page for support.
+          </p>
         </div>
       </div>
     </section>
