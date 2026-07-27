@@ -13,7 +13,7 @@ import ContactUs from './components/ContactUs'
 import WhatsappButton from './components/WhatsappButton'
 
 function App() {
-  const [showSplash, setShowSplash] = useState(false)
+  const [showSplash, setShowSplash] = useState(true)
   const [currentPage, setCurrentPage] = useState('home')
 
   const handleSplashComplete = () => {
