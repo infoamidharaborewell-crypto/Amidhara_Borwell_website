@@ -31,8 +31,16 @@ const Header = ({ onNavigate, currentPage = 'home' }) => {
           
           {/* Logo Matching Reference Site */}
           <div className="flex items-center space-x-3 cursor-pointer" onClick={() => scrollToSection('home')}>
-            <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center shadow-md">
-              <span className="text-white font-bold text-xl">A</span>
+            <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md overflow-hidden p-1 border border-blue-200">
+              <img
+                src="/images/amidhara-logo-cutout.png"
+                alt="Amidhara Borewell Logo"
+                loading="lazy"
+                decoding="async"
+                width="40"
+                height="40"
+                className="w-full h-full object-contain"
+              />
             </div>
             <span className="text-xl md:text-2xl font-bold text-gray-900 tracking-tight">
               Amidhara <span className="text-blue-600">Borewell</span>
