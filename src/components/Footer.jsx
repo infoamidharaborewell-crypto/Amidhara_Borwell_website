@@ -16,7 +16,7 @@ const Footer = ({ onNavigate }) => {
   return (
     <footer className="bg-gray-900 text-white py-12 relative overflow-hidden water-surface">
       {/* Water Bubbles */}
-      <div className="water-bubbles">
+      <div className="hidden md:block water-bubbles">
         <div className="water-bubble"></div>
         <div className="water-bubble"></div>
       </div>
@@ -54,7 +54,7 @@ const Footer = ({ onNavigate }) => {
               <span className="text-2xl font-bold">Amidhara Borewell</span>
             </div>
 
-            <p className="text-gray-400 mb-4 text-sm leading-relaxed">
+            <p className="text-gray-300 mb-4 text-sm leading-relaxed">
               Your trusted partner for reliable water solutions. 
               Professional borewell services with years of expertise.
             </p>
@@ -64,8 +64,9 @@ const Footer = ({ onNavigate }) => {
                 href="https://wa.me/919106604895" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-green-600 transition-colors"
+                className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-green-600 transition-colors min-h-[44px] min-w-[44px]"
                 title="WhatsApp"
+                aria-label="Amidhara Borewell WhatsApp"
               >
                 <FaWhatsapp className="text-white text-lg" />
               </a>
@@ -73,8 +74,9 @@ const Footer = ({ onNavigate }) => {
                 href="https://www.facebook.com/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors"
+                className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors min-h-[44px] min-w-[44px]"
                 title="Facebook"
+                aria-label="Amidhara Borewell Facebook Page"
               >
                 <FaFacebookF className="text-white text-base" />
               </a>
@@ -82,8 +84,9 @@ const Footer = ({ onNavigate }) => {
                 href="https://www.instagram.com/amidhara_borewell?igsh=MWlzeGR2eWU1c3Juag==" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-pink-600 transition-colors"
+                className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-pink-600 transition-colors min-h-[44px] min-w-[44px]"
                 title="Instagram"
+                aria-label="Amidhara Borewell Instagram Page"
               >
                 <FaInstagram className="text-white text-lg" />
               </a>
@@ -94,20 +97,20 @@ const Footer = ({ onNavigate }) => {
           <div>
             <h3 className="text-lg font-semibold mb-4 text-blue-400">Quick Links</h3>
             <ul className="space-y-2 text-sm">
-              <li><button onClick={() => scrollToSection('home')} className="text-gray-400 hover:text-white transition-colors">Home</button></li>
-              <li><button onClick={() => scrollToSection('services')} className="text-gray-400 hover:text-white transition-colors">Services</button></li>
-              <li><button onClick={() => scrollToSection('gallery')} className="text-gray-400 hover:text-white transition-colors">Gallery</button></li>
-              <li><button onClick={() => scrollToSection('about')} className="text-gray-400 hover:text-white transition-colors">About Us</button></li>
-              <li><button onClick={() => scrollToSection('product')} className="text-gray-400 hover:text-white transition-colors">Product</button></li>
-              <li><button onClick={() => scrollToSection('faq')} className="text-gray-400 hover:text-white transition-colors">FAQ</button></li>
-              <li><button onClick={() => scrollToSection('contact')} className="text-gray-400 hover:text-white transition-colors">Contact</button></li>
+              <li><button onClick={() => scrollToSection('home')} className="text-gray-300 hover:text-white transition-colors">Home</button></li>
+              <li><button onClick={() => scrollToSection('services')} className="text-gray-300 hover:text-white transition-colors">Services</button></li>
+              <li><button onClick={() => scrollToSection('gallery')} className="text-gray-300 hover:text-white transition-colors">Gallery</button></li>
+              <li><button onClick={() => scrollToSection('about')} className="text-gray-300 hover:text-white transition-colors">About Us</button></li>
+              <li><button onClick={() => scrollToSection('product')} className="text-gray-300 hover:text-white transition-colors">Product</button></li>
+              <li><button onClick={() => scrollToSection('faq')} className="text-gray-300 hover:text-white transition-colors">FAQ</button></li>
+              <li><button onClick={() => scrollToSection('contact')} className="text-gray-300 hover:text-white transition-colors">Contact</button></li>
             </ul>
           </div>
 
           {/* Services */}
           <div>
             <h3 className="text-lg font-semibold mb-4 text-blue-400">Our Services</h3>
-            <ul className="space-y-2 text-sm text-gray-400">
+            <ul className="space-y-2 text-sm text-gray-300">
               <li>Borewell Drilling</li>
               <li>Installation Services</li>
               <li>Maintenance</li>
@@ -120,7 +123,7 @@ const Footer = ({ onNavigate }) => {
           {/* Contact Info */}
           <div>
             <h3 className="text-lg font-semibold mb-4 text-blue-400">Contact Information</h3>
-            <ul className="space-y-2 text-sm text-gray-400">
+            <ul className="space-y-2 text-sm text-gray-300">
               <li className="font-semibold text-white">+91 91066 04895</li>
               <li>infoamidharaborewell@gmail.com</li>
               <li className="pt-1 leading-relaxed">

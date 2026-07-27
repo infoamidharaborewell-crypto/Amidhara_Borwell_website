@@ -8,6 +8,10 @@ const Logo3DSidebar = () => {
           <img
             src="/images/amidhara-logo-cutout.png"
             alt="Amidhara Borewell 3D Logo"
+            loading="lazy"
+            decoding="async"
+            width="112"
+            height="144"
             className="w-full h-full object-contain filter drop-shadow-md"
           />
         </div>

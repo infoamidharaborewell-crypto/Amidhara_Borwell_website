@@ -282,6 +282,10 @@ const Gallery = () => {
 
   
 
+  useEffect(() => {
+    AOS.init({ duration: 800, once: true, disable: 'mobile' });
+  }, []);
+
   return (
     <section id="gallery" className="min-h-screen bg-gradient-to-br from-blue-50 to-white relative overflow-hidden">
       <WaterEffects variant="waves" />
@@ -290,9 +294,9 @@ const Gallery = () => {
         <div className="water-bubble"></div>
         <div className="water-bubble"></div>
       </div>
-      {/* 3D Animation Section */}
+      {/* 3D Animation Section (Desktop viewports only for fast mobile performance) */}
       {show3DAnimation && (
-        <div className="fixed inset-0 z-50 bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 flex items-center justify-center">
+        <div className="hidden md:flex fixed inset-0 z-50 bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 items-center justify-center">
           <div className="w-full h-full">
             <Canvas
               shadows
@@ -344,18 +348,21 @@ const Gallery = () => {
         <button 
           className={`filter-btn ${filter === "all" ? "active" : ""}`} 
           onClick={() => setFilter("all")}
+          aria-label="Filter all work"
         >
           All Work
         </button>
         <button 
           className={`filter-btn ${filter === "photo" ? "active" : ""}`} 
           onClick={() => setFilter("photo")}
+          aria-label="Filter photo portfolio"
         >
           Photos
         </button>
         <button 
           className={`filter-btn ${filter === "video" ? "active" : ""}`} 
           onClick={() => setFilter("video")}
+          aria-label="Filter video portfolio"
         >
           Videos
         </button>
@@ -374,6 +381,10 @@ const Gallery = () => {
               <img 
                 src={item.type === 'video' ? item.thumbnail : item.src} 
                 alt={item.title} 
+                loading="lazy"
+                decoding="async"
+                width="400"
+                height="300"
               />
               {/* Overlay Icon */}
               <div className="media-overlay">
@@ -395,7 +406,7 @@ const Gallery = () => {
       {activeLightbox && (
         <div className="lightbox" onClick={closeLightbox}>
           <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
-            <button className="close-btn" onClick={closeLightbox}>&times;</button>
+            <button className="close-btn p-2 min-h-[44px] min-w-[44px]" onClick={closeLightbox} aria-label="Close gallery modal">&times;</button>
             
             {activeLightbox.type === 'video' ? (
               <video controls autoPlay className="lightbox-media">

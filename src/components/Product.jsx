@@ -71,7 +71,7 @@ const productList = [
 const Product = () => {
   // ✅ Correct place for useEffect
   useEffect(() => {
-    AOS.init({ duration: 900, once: true });
+    AOS.init({ duration: 900, once: true, disable: 'mobile' });
   }, []);
 
   const scrollToContact = () => {
@@ -88,7 +88,7 @@ const Product = () => {
     >
       <WaterEffects variant="waves" />
 
-      <div className="water-bubbles">
+      <div className="hidden md:block water-bubbles">
         <div className="water-bubble"></div>
         <div className="water-bubble"></div>
         <div className="water-bubble"></div>
@@ -110,7 +110,7 @@ const Product = () => {
               data-aos-delay={index * 200}
             >
               <div className="product-img">
-                <img src={product.img} alt={product.name} />
+                <img src={product.img} alt={product.name} loading="lazy" decoding="async" width="300" height="300" />
               </div>
 
               <div className="product-info">

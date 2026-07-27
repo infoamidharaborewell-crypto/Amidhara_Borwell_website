@@ -5,7 +5,7 @@ const About = () => {
   return (
     <section id="about" className="py-20 bg-gradient-to-br from-gray-50 to-blue-50 relative overflow-hidden water-wave-bg water-surface">
       <WaterEffects variant="waves" />
-      <div className="water-bubbles">
+      <div className="hidden md:block water-bubbles">
         <div className="water-bubble"></div>
         <div className="water-bubble"></div>
         <div className="water-bubble"></div>
@@ -110,7 +110,8 @@ const About = () => {
                   const el = document.getElementById('services');
                   if (el) el.scrollIntoView({ behavior: 'smooth' });
                 }}
-                className="text-blue-600 font-semibold underline hover:text-blue-800"
+                className="text-blue-800 font-semibold underline hover:text-blue-950"
+                aria-label="Navigate to Services section"
               >
                 Services
               </button>
@@ -120,7 +121,8 @@ const About = () => {
                   const el = document.getElementById('gallery');
                   if (el) el.scrollIntoView({ behavior: 'smooth' });
                 }}
-                className="text-blue-600 font-semibold underline hover:text-blue-800"
+                className="text-blue-800 font-semibold underline hover:text-blue-950"
+                aria-label="Navigate to Gallery section"
               >
                 Gallery
               </button>
@@ -130,7 +132,8 @@ const About = () => {
                   const el = document.getElementById('contact');
                   if (el) el.scrollIntoView({ behavior: 'smooth' });
                 }}
-                className="text-blue-600 font-semibold underline hover:text-blue-800"
+                className="text-blue-800 font-semibold underline hover:text-blue-950"
+                aria-label="Navigate to Contact section"
               >
                 Contact Us Today
               </button>.

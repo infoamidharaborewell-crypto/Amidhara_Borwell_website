@@ -3,7 +3,6 @@ import Header from './components/Header'
 import Hero from './components/Hero'
 import Services from './components/Services'
 import About from './components/About'
-
 import Footer from './components/Footer'
 import Gallery from './components/Gallery'
 import SplashScreen from './components/SplashScreen'
@@ -37,13 +36,15 @@ function App() {
     <div className="min-h-screen bg-gray-50">
       <Logo3DSidebar />
       <Header onNavigate={handleNavigation} currentPage={currentPage} />
-      <Hero />
-      <Services />
-      <Gallery />
-      <About />
-      <Product />
-      <FAQ />
-      <ContactUs />
+      <main id="main-content">
+        <Hero />
+        <Services />
+        <Gallery />
+        <About />
+        <Product />
+        <FAQ />
+        <ContactUs />
+      </main>
       <WhatsappButton />
       <Footer onNavigate={handleNavigation} />
     </div>
@@ -51,4 +52,3 @@ function App() {
 }
 
 export default App
-

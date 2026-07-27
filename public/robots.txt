@@ -1,0 +1,14 @@
+# Robots.txt for Amidhara Borewell - https://www.amidharaborewell.com/
+
+User-agent: *
+Allow: /
+Allow: /images/
+Allow: /videos/
+
+# Disallow private build directories and administrative paths
+Disallow: /dist/
+Disallow: /node_modules/
+Disallow: /*.json$
+
+# Sitemap declaration
+Sitemap: https://www.amidharaborewell.com/sitemap.xml

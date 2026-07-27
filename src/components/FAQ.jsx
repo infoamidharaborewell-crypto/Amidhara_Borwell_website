@@ -65,7 +65,7 @@ const FAQ = () => {
       <WaterEffects variant="waves" />
 
       {/* Bubbles */}
-      <div className="water-bubbles">
+      <div className="hidden md:block water-bubbles">
         <div className="water-bubble"></div>
         <div className="water-bubble"></div>
         <div className="water-bubble"></div>
@@ -86,21 +86,30 @@ const FAQ = () => {
         </div>
 
         {/* FAQ List */}
-        <div className="faq-container max-w-4xl mx-auto">
+        <div className="faq-container max-w-4xl mx-auto space-y-4">
           {faqsData.map((faq, index) => (
             <div
               key={index}
-              className={`faq-card ${openIndex === index ? "open" : ""}`}
-              onClick={() => toggleFAQ(index)}
+              className={`faq-card bg-white rounded-xl shadow-md p-5 border border-blue-100 transition-all ${
+                openIndex === index ? "open" : ""
+              }`}
             >
-              <div className="faq-question">
-                <h3>{faq.question}</h3>
-                <span>{openIndex === index ? "−" : "+"}</span>
-              </div>
+              <button
+                type="button"
+                className="faq-question w-full text-left cursor-pointer flex justify-between items-center bg-transparent border-0 p-0 focus:outline-none min-h-[44px]"
+                onClick={() => toggleFAQ(index)}
+                aria-expanded={openIndex === index}
+                aria-label={`Toggle answer for: ${faq.question}`}
+              >
+                <h3 className="text-lg md:text-xl font-bold text-gray-900 m-0">{faq.question}</h3>
+                <span className="text-2xl font-bold text-blue-600 ml-4 flex-shrink-0">
+                  {openIndex === index ? "−" : "+"}
+                </span>
+              </button>
 
               {/* Answer – shown only when open */}
               {openIndex === index && (
-                <div className="faq-answer">
+                <div className="faq-answer mt-4 pt-3 border-t border-gray-100 text-gray-700 leading-relaxed text-base">
                   <p>{faq.answer}</p>
                 </div>
               )}
@@ -117,8 +126,9 @@ const FAQ = () => {
             Speak to our experts today for accurate guidance and project assessment.
           </p>
           <button
-            className="bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-700 transition-colors shadow-lg"
+            className="bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-700 transition-colors shadow-lg min-h-[48px]"
             onClick={() => (window.location.href = 'tel:+919106604895')}
+            aria-label="Call Amidhara Borewell at +91 91066 04895"
           >
             Call Now – +91 91066 04895
           </button>

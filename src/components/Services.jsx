@@ -1,8 +1,9 @@
-import React, { Suspense } from 'react';
+import React, { lazy, Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
-import Tractor3D from './Tractor3D';
-import Scene3D from './Scene3D';
 import WaterEffects from './WaterEffects';
+
+const Tractor3D = lazy(() => import('./Tractor3D'));
+const Scene3D = lazy(() => import('./Scene3D'));
 import service1 from "/service1.jpeg";
 import service2 from "/service2.png";
 import service3 from "/service3.webp";
@@ -59,14 +60,14 @@ const Services = () => {
       <WaterEffects variant="waves" />
 
       {/* Background water bubbles */}
-      <div className="water-bubbles">
+      <div className="hidden md:block water-bubbles">
         <div className="water-bubble"></div>
         <div className="water-bubble"></div>
         <div className="water-bubble"></div>
       </div>
 
-      {/* Floating 3D Droplets */}
-      <div className="absolute inset-0 w-full h-full z-0 pointer-events-none opacity-30">
+      {/* Floating 3D Droplets (Desktop viewports only for fast mobile score) */}
+      <div className="hidden md:block absolute inset-0 w-full h-full z-0 pointer-events-none opacity-30">
         <div className="absolute top-20 right-10 w-64 h-64 md:w-96 md:h-96">
           <Scene3D showPump={false} showDroplets={true} />
         </div>
@@ -92,7 +93,11 @@ const Services = () => {
               <div className="relative h-56 overflow-hidden">
                 <img 
                   src={service.image} 
-                  alt={service.title} 
+                  alt={`${service.title} in Vadodara`}
+                  loading="lazy"
+                  decoding="async"
+                  width="400"
+                  height="250"
                   className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end p-4">
@@ -108,7 +113,8 @@ const Services = () => {
                     const el = document.getElementById('contact');
                     if (el) el.scrollIntoView({ behavior: 'smooth' });
                   }}
-                  className="inline-flex items-center text-blue-600 font-semibold hover:text-blue-800 text-sm"
+                  className="inline-flex items-center text-blue-600 font-semibold hover:text-blue-800 text-sm min-h-[44px]"
+                  aria-label={`Book ${service.title} service in Vadodara`}
                 >
                   Book Service &rarr;
                 </button>
@@ -127,8 +133,8 @@ const Services = () => {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
-            {/* Left 3D Canvas Container */}
-            <div className="bg-gradient-to-br from-blue-200/80 via-blue-100/70 to-indigo-200/80 rounded-3xl p-4 border border-blue-200 shadow-xl relative min-h-[380px] flex flex-col justify-end overflow-hidden">
+            {/* Left 3D Canvas Container (Desktop only for fast mobile score) */}
+            <div className="hidden lg:flex bg-gradient-to-br from-blue-200/80 via-blue-100/70 to-indigo-200/80 rounded-3xl p-4 border border-blue-200 shadow-xl relative min-h-[380px] flex-col justify-end overflow-hidden">
               <div className="w-full h-full absolute inset-0">
                 <Canvas camera={{ position: [0, 2, 6], fov: 45 }}>
                   <Suspense fallback={null}>

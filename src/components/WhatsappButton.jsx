@@ -16,7 +16,8 @@ const WhatsappButton = () => {
         {/* Call Button */}
         <a
           href={`tel:${phone}`}
-          className="flex items-center gap-2.5 bg-blue-600 hover:bg-blue-700 text-white font-medium px-4 py-2.5 rounded-full shadow-lg transition-all hover:scale-105"
+          className="flex items-center gap-2.5 bg-blue-600 hover:bg-blue-700 text-white font-medium px-4 py-2.5 rounded-full shadow-lg transition-all hover:scale-105 min-h-[44px]"
+          aria-label="Call Amidhara Borewell directly at 98251 26833"
         >
           <FaPhone className="text-sm" />
           <span className="text-sm">Call Now</span>
@@ -25,9 +26,10 @@ const WhatsappButton = () => {
         {/* WhatsApp Button */}
         <a
           href={`https://wa.me/${phone}?text=${encodeURIComponent(whatsappMsg)}`}
-          className="flex items-center gap-2.5 bg-emerald-500 hover:bg-emerald-600 text-white font-medium px-4 py-2.5 rounded-full shadow-lg transition-all hover:scale-105"
+          className="flex items-center gap-2.5 bg-emerald-500 hover:bg-emerald-600 text-white font-medium px-4 py-2.5 rounded-full shadow-lg transition-all hover:scale-105 min-h-[44px]"
           target="_blank"
           rel="noopener noreferrer"
+          aria-label="Chat with Amidhara Borewell on WhatsApp"
         >
           <FaWhatsapp className="text-base" />
           <span className="text-sm">WhatsApp</span>

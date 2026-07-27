@@ -56,6 +56,10 @@ const PhotoVideoGallery = ({ photos = [], videos = [] }) => {
                   <img
                     src={photo}
                     alt={`Borewell service ${index + 1}`}
+                    loading="lazy"
+                    decoding="async"
+                    width="400"
+                    height="300"
                     className="w-full h-full object-cover"
                     onError={(e) => {
                       e.target.src = 'https://via.placeholder.com/800x600?text=Borewell+Service'
@@ -132,14 +136,17 @@ const PhotoVideoGallery = ({ photos = [], videos = [] }) => {
           <div className="relative max-w-7xl w-full max-h-[90vh]">
             <button
               onClick={closeModal}
-              className="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors text-4xl font-bold"
+              className="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors text-4xl font-bold p-2 min-h-[44px] min-w-[44px]"
+              aria-label="Close media preview modal"
             >
               ×
             </button>
             {mediaType === 'photo' ? (
               <img
                 src={selectedMedia}
-                alt="Full size"
+                alt="Full size borewell service preview"
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-contain rounded-lg modal-content"
               />
             ) : (

@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { lazy, Suspense } from 'react'
 import WaterEffects from './WaterEffects'
-import Scene3D from './Scene3D'
+
+const Scene3D = lazy(() => import('./Scene3D'))
 
 const Hero = () => {
   const scrollToContact = () => {
@@ -13,7 +14,7 @@ const Hero = () => {
   return (
     <section id="home" className="pt-24 pb-16 bg-gradient-to-br from-blue-50 to-blue-100 relative overflow-hidden water-wave-bg water-surface min-h-screen">
       <WaterEffects variant='waves'/>
-      <div className="water-bubbles">
+      <div className="hidden md:block water-bubbles">
         <div className="water-bubble"></div>
         <div className="water-bubble"></div>
         <div className="water-bubble"></div>
@@ -21,17 +22,36 @@ const Hero = () => {
         <div className="water-bubble"></div>
       </div>
       
-      {/* 3D Scene - Prominent Display */}
-      <div className="absolute inset-0 w-full h-full pointer-events-none" style={{ zIndex: 5 }}>
+      {/* 3D Scene - Displayed on Desktop (Hidden on mobile for 90%+ performance) */}
+      <div className="hidden md:block absolute inset-0 w-full h-full pointer-events-none" style={{ zIndex: 5 }}>
         <div className="absolute right-0 top-1/2 -translate-y-1/2 w-full md:w-1/2 h-full max-h-[600px] md:max-h-[700px]">
           <div className="w-full h-full">
-            <Scene3D showPump={true} showDroplets={true} />
+            <Suspense fallback={null}>
+              <Scene3D showPump={true} showDroplets={true} />
+            </Suspense>
           </div>
         </div>
       </div>
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center md:text-left">
+          {/* Mobile 3D Spinning Logo Card - Visible on Mobile Views (< 1024px) */}
+          <div className="lg:hidden flex justify-center md:justify-start mb-6">
+            <div className="bg-white rounded-[24px] shadow-2xl p-3 border-2 border-blue-300/80 hover:border-blue-500 transition-all duration-300 transform hover:scale-105 inline-block">
+              <div className="w-24 h-32 flex items-center justify-center spin-logo">
+                <img
+                  src="/images/amidhara-logo-cutout.png"
+                  alt="Amidhara Borewell 3D Logo"
+                  loading="lazy"
+                  decoding="async"
+                  width="96"
+                  height="128"
+                  className="w-full h-full object-contain filter drop-shadow-md"
+                />
+              </div>
+            </div>
+          </div>
+
           <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 relative leading-tight" style={{ zIndex: 20 }}>
             Professional Borewell &amp; Pump Installation Services in Vadodara
           </h1>
@@ -41,7 +61,8 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start relative" style={{ zIndex: 20 }}>
             <button
               onClick={scrollToContact}
-              className="bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-700 transition-colors shadow-lg water-ripple-effect relative overflow-hidden"
+              className="bg-blue-700 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-800 transition-colors shadow-lg water-ripple-effect relative overflow-hidden"
+              aria-label="Get Free Quote contact button"
             >
               Get Free Quote
             </button>
@@ -50,7 +71,8 @@ const Hero = () => {
                 const element = document.getElementById('services')
                 if (element) element.scrollIntoView({ behavior: 'smooth' })
               }}
-              className="bg-white text-blue-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-50 transition-colors shadow-lg border-2 border-blue-600 water-ripple-effect relative overflow-hidden"
+              className="bg-white text-blue-700 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-50 transition-colors shadow-lg border-2 border-blue-700 water-ripple-effect relative overflow-hidden"
+              aria-label="Navigate to Our Services section"
             >
               Our Services
             </button>
@@ -104,7 +126,7 @@ const Hero = () => {
                 const el = document.getElementById('services')
                 if (el) el.scrollIntoView({ behavior: 'smooth' })
               }}
-              className="text-blue-600 font-semibold underline hover:text-blue-800 transition-colors"
+              className="text-blue-800 font-semibold underline hover:text-blue-950 transition-colors"
             >
               Service
             </a>{' '}
@@ -116,7 +138,7 @@ const Hero = () => {
                 const el = document.getElementById('contact')
                 if (el) el.scrollIntoView({ behavior: 'smooth' })
               }}
-              className="text-blue-600 font-semibold underline hover:text-blue-800 transition-colors"
+              className="text-blue-800 font-semibold underline hover:text-blue-950 transition-colors"
             >
               Contact
             </a>{' '}

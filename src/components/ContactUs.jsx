@@ -5,7 +5,7 @@ import WaterEffects from "./WaterEffects";
 
 const ContactUs = () => {
 useEffect(() => {
-    AOS.init({ duration: 1000, once: true });
+    AOS.init({ duration: 1000, once: true, disable: 'mobile' });
   }, []);
 
   const [submitted, setSubmitted] = useState(false);
@@ -21,7 +21,7 @@ useEffect(() => {
   return (
     <section id="contact" className="py-20 bg-white relative overflow-hidden water-surface">
       <WaterEffects variant="waves" />
-      <div className="water-bubbles">
+      <div className="hidden md:block water-bubbles">
         <div className="water-bubble"></div>
         <div className="water-bubble"></div>
         <div className="water-bubble"></div>
@@ -96,37 +96,37 @@ useEffect(() => {
             <h2>Request a Quote</h2>
             
             <div className="input-group">
-              <input type="text" required placeholder=" " />
-              <label>Your Full Name</label>
+              <input id="full-name" type="text" required placeholder=" " aria-label="Your Full Name" />
+              <label htmlFor="full-name">Your Full Name</label>
             </div>
 
             <div className="input-group">
-              <input type="tel" required placeholder=" " />
-              <label>Phone Number</label>
+              <input id="phone-number" type="tel" required placeholder=" " aria-label="Phone Number" />
+              <label htmlFor="phone-number">Phone Number</label>
             </div>
 
             <div className="input-group">
-              <input type="email" required placeholder=" " />
-              <label>Email Address</label>
+              <input id="email-address" type="email" required placeholder=" " aria-label="Email Address" />
+              <label htmlFor="email-address">Email Address</label>
             </div>
 
             <div className="input-group">
-              <select required>
-                <option value="" disabled selected>Select a service</option>
-                <option>New Borewell Drilling</option>
-                <option>Borewell Recharge</option>
-                <option>Pump Installation</option>
-                <option>Repair & Maintenance</option>
-                <option>Other Query</option>
+              <select id="service-select" required aria-label="Select a service" defaultValue="">
+                <option value="" disabled>Select a service</option>
+                <option value="New Borewell Drilling">New Borewell Drilling</option>
+                <option value="Borewell Recharge">Borewell Recharge</option>
+                <option value="Pump Installation">Pump Installation</option>
+                <option value="Repair & Maintenance">Repair & Maintenance</option>
+                <option value="Other Query">Other Query</option>
               </select>
             </div>
 
             <div className="input-group">
-              <textarea rows="4" required placeholder=" "></textarea>
-              <label>Project Details</label>
+              <textarea id="project-details" rows="4" required placeholder=" " aria-label="Project Details"></textarea>
+              <label htmlFor="project-details">Project Details</label>
             </div>
 
-            <button type="submit" className={`btn-submit ${submitted ? 'success' : ''}`}>
+            <button type="submit" className={`btn-submit ${submitted ? 'success' : ''}`} aria-label="Send Quote Request">
               {submitted ? "Message Sent! ✓" : "Send Request →"}
             </button>
           </form>
