@@ -61,18 +61,18 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start relative" style={{ zIndex: 20 }}>
             <button
               onClick={scrollToContact}
-              className="bg-blue-700 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-800 transition-colors shadow-lg water-ripple-effect relative overflow-hidden"
+              className="bg-gradient-to-r from-blue-700 via-blue-800 to-indigo-800 hover:from-blue-800 hover:to-indigo-900 text-white px-8 py-4 rounded-xl text-lg font-bold transition-all shadow-xl shadow-blue-700/25 water-ripple-effect relative overflow-hidden min-h-[50px]"
               aria-label="Get Free Quote contact button"
             >
               Get Free Quote
             </button>
             <button
               onClick={() => {
-                const element = document.getElementById('services')
-                if (element) element.scrollIntoView({ behavior: 'smooth' })
+                const el = document.getElementById('services')
+                if (el) el.scrollIntoView({ behavior: 'smooth' })
               }}
-              className="bg-white text-blue-700 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-50 transition-colors shadow-lg border-2 border-blue-700 water-ripple-effect relative overflow-hidden"
-              aria-label="Navigate to Our Services section"
+              className="bg-white border-2 border-blue-700 text-blue-800 hover:bg-blue-50 px-8 py-4 rounded-xl text-lg font-bold transition-colors shadow-md min-h-[50px]"
+              aria-label="Explore Services section button"
             >
               Our Services
             </button>

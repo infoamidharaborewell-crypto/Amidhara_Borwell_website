@@ -124,7 +124,7 @@ const Header = ({ onNavigate, currentPage = 'home' }) => {
         }`}
       >
         {/* Sidebar Header */}
-        <div className="p-5 border-b border-gray-100 flex items-center justify-between bg-gradient-to-r from-blue-50 to-white">
+        <div className="p-5 border-b border-blue-800 flex items-center justify-between bg-gradient-to-r from-blue-800 via-blue-700 to-indigo-900 text-white shadow-md">
           <div className="flex items-center space-x-3">
             <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md p-1 border border-blue-200">
               <img
@@ -134,14 +134,14 @@ const Header = ({ onNavigate, currentPage = 'home' }) => {
               />
             </div>
             <div>
-              <span className="text-lg font-bold text-gray-900 block leading-none">Amidhara</span>
-              <span className="text-xs font-semibold text-blue-700">Borewell Vadodara</span>
+              <span className="text-lg font-bold text-white block leading-none">Amidhara</span>
+              <span className="text-xs font-medium text-blue-200">Borewell Vadodara</span>
             </div>
           </div>
 
           <button
             onClick={() => setIsMenuOpen(false)}
-            className="w-10 h-10 rounded-full bg-gray-100 hover:bg-red-50 text-gray-700 hover:text-red-600 flex items-center justify-center transition-colors min-h-[44px] min-w-[44px]"
+            className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors min-h-[44px] min-w-[44px]"
             aria-label="Close mobile sidebar menu"
           >
             <FaTimes className="text-lg" />
