@@ -76,18 +76,31 @@ useEffect(() => {
             </div>
           </div>
 
-          {/* Embedded Google Map */}
-          <div className="map-container">
+          {/* Embedded Google Map with Red Location Marker */}
+          <div className="map-container overflow-hidden rounded-2xl shadow-lg border border-blue-100 relative">
             <iframe 
-              title="Amidhara Location"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3692.657477835678!2d73.1935!3d22.2537!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjLCsDE1JzEzLjMiTiA3M8KwMTEnMzYuNiJF!5e0!3m2!1sen!2sin!4v1632928452918!5m2!1sen!2sin" 
+              title="Amidhara Borewell Vadodara Location Map"
+              src="https://maps.google.com/maps?q=Amidhara+Borewell,+Sahajanand+Krupa+Society,+F/120,+Tarsali,+Vadodara,+Gujarat+390009&t=&z=15&ie=UTF8&iwloc=B&output=embed" 
               width="100%" 
               height="100%" 
-              style={{ border: 0 }} 
+              style={{ border: 0, minHeight: '280px' }} 
               allowFullScreen="" 
               loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
             ></iframe>
           </div>
+
+          {/* Direct Google Maps Directions Button */}
+          <a
+            href="https://www.google.com/maps/search/?api=1&query=Amidhara+Borewell+Sahajanand+Krupa+Society+F/120+Tarsali+Vadodara+Gujarat+390009"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-3 w-full bg-gradient-to-r from-blue-700 to-blue-800 hover:from-blue-800 hover:to-blue-900 text-white font-bold py-3 px-4 rounded-xl flex items-center justify-center space-x-2 shadow-md transition-all text-sm min-h-[44px]"
+            aria-label="Open Amidhara Borewell location pin in Google Maps"
+          >
+            <span className="text-base">📍</span>
+            <span>Get Directions / Open Marker in Google Maps →</span>
+          </a>
         </div>
 
         {/* Right Side: The Form */}
