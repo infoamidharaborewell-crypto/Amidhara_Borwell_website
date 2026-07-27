@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+:root, html, body {
+  color-scheme: light !important;
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -461,15 +467,14 @@ canvas {
   max-width: 1200px;
   margin: auto;
   padding: 50px 20px;
-  color: #fff;
+  color: #0f172a;
   text-align: center;
-  /* background: linear-gradient(135deg, #0d0d0d, #1a1a1a); */
 }
 
 .products-title {
   font-size: 35px;
   margin-bottom: 40px;
-  color: black;
+  color: #0f172a;
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: 700;
@@ -484,14 +489,14 @@ canvas {
 
 /* Product card */
 .product-card {
-  background: #ffffff;  /* White background */
+  background: #ffffff;  /* Crisp White background */
   border-radius: 20px;
-  backdrop-filter: blur(10px);
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
   overflow: hidden;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
   position: relative;
 }
-
 
 .product-card::before {
   content: "";
@@ -500,7 +505,6 @@ canvas {
   left: -50%;
   width: 200%;
   height: 200%;
-  /* background: linear-gradient(45deg, #4ec3ff, #fcbf49, #ff6b6b, #4ec3ff); */
   background-size: 400% 400%;
   animation: gradientMove 10s ease infinite;
   opacity: 0.15;
@@ -515,13 +519,14 @@ canvas {
 }
 
 .product-card:hover {
-  transform: translateY(-10px) scale(1.03);
-  box-shadow: 0 20px 35px rgba(0,0,0,0.7);
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 35px rgba(30, 58, 138, 0.15);
 }
 
 /* Product image */
 .product-img {
   overflow: hidden;
+  background: #f8fafc;
 }
 
 .product-img img {
@@ -532,8 +537,7 @@ canvas {
 }
 
 .product-card:hover .product-img img {
-  transform: scale(1.1);
-  filter: brightness(1.1);
+  transform: scale(1.05);
 }
 
 /* Product info */
@@ -545,26 +549,27 @@ canvas {
 }
 
 .product-info h2 {
-  color: rgb(9, 9, 110);
+  color: #0f172a;
   font-size: 22px;
+  font-weight: 700;
   margin-bottom: 8px;
 }
 
 .desc {
-  color: rgb(46, 45, 45);
+  color: #475569;
   margin-bottom: 10px;
 }
 
 .price {
-  font-size: 20px;
-  font-weight: 700;
-  color: #ff8800;
+  font-size: 22px;
+  font-weight: 800;
+  color: #1d4ed8;
   margin-bottom: 5px;
 }
 
 .gst {
   font-size: 12px;
-  color: rgb(46, 45, 45);
+  color: #64748b;
   margin-bottom: 15px;
 }
 
