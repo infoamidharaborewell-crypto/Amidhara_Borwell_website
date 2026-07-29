@@ -14,27 +14,10 @@ import ContactUs from './components/ContactUs'
 import WhatsappButton from './components/WhatsappButton'
 
 function App() {
-  const [showSplash, setShowSplash] = useState(() => {
-    if (typeof window !== 'undefined') {
-      const hasHash = window.location.hash && window.location.hash.length > 1
-      const hasSeen = sessionStorage.getItem('hasSeenSplash')
-      if (hasHash || hasSeen) {
-        return false
-      }
-    }
-    return true
-  })
-
-  const [currentPage, setCurrentPage] = useState(() => {
-    if (typeof window !== 'undefined' && window.location.hash) {
-      const hash = window.location.hash.replace('#', '')
-      if (hash) return hash
-    }
-    return 'home'
-  })
+  const [showSplash, setShowSplash] = useState(true)
+  const [currentPage, setCurrentPage] = useState('home')
 
   const handleSplashComplete = () => {
-    sessionStorage.setItem('hasSeenSplash', 'true')
     setShowSplash(false)
   }
 
