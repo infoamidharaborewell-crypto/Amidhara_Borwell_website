@@ -54,23 +54,23 @@ const SplashScreen = ({ onComplete }) => {
 
   return (
     <div className="fixed inset-0 z-50 overflow-hidden font-sans pointer-events-auto">
-      {/* Top Liquid Curtain Sweep */}
+      {/* Top Liquid Curtain Sweep (GPU Accelerated) */}
       <div
-        className={`absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-slate-950 via-blue-950 to-slate-900 z-40 transition-transform duration-700 ease-[cubic-bezier(0.77,0,0.175,1)] ${
+        className={`absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-slate-950 via-blue-950 to-slate-900 z-40 transform-gpu transition-transform duration-700 ease-[cubic-bezier(0.77,0,0.175,1)] ${
           isFadingOut ? "-translate-y-full" : "translate-y-0"
         }`}
       ></div>
 
-      {/* Bottom Liquid Curtain Sweep */}
+      {/* Bottom Liquid Curtain Sweep (GPU Accelerated) */}
       <div
-        className={`absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-slate-950 via-blue-950 to-slate-900 z-40 transition-transform duration-700 ease-[cubic-bezier(0.77,0,0.175,1)] ${
+        className={`absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-slate-950 via-blue-950 to-slate-900 z-40 transform-gpu transition-transform duration-700 ease-[cubic-bezier(0.77,0,0.175,1)] ${
           isFadingOut ? "translate-y-full" : "translate-y-0"
         }`}
       ></div>
 
       {/* Main Content Viewport */}
       <div
-        className={`fixed inset-0 z-50 flex items-center justify-center transition-all duration-700 ${
+        className={`fixed inset-0 z-50 flex items-center justify-center transform-gpu transition-all duration-700 ${
           isFadingOut ? "opacity-0 scale-110 blur-xl pointer-events-none" : "opacity-100 scale-100"
         }`}
       >

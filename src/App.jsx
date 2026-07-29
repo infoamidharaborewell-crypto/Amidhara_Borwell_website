@@ -74,12 +74,24 @@ function App() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [showSplash, currentPage])
 
-  if (showSplash) {
-    return <SplashScreen onComplete={handleSplashComplete} />
-  }
+  // Lock body scroll while splash screen is active
+  useEffect(() => {
+    if (showSplash) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'unset'
+    }
+    return () => {
+      document.body.style.overflow = 'unset'
+    }
+  }, [showSplash])
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 relative">
+      {/* Splash Screen Overlay */}
+      {showSplash && <SplashScreen onComplete={handleSplashComplete} />}
+
+      {/* Pre-rendered Main Website Content (Instant Reveal, Zero Lag) */}
       <Logo3DSidebar />
       <Header onNavigate={handleNavigation} currentPage={currentPage} />
       <main id="main-content">
