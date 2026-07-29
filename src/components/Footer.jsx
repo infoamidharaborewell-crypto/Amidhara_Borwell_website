@@ -138,7 +138,7 @@ const Footer = ({ onNavigate }) => {
         {/* Bottom */}
         <div className="border-t border-gray-800 pt-8 mt-8 flex flex-col items-center justify-center space-y-4 text-center text-gray-400 text-sm">
           <a
-            href="https://tejaskpai.com"
+            href="https://tejaskpaisoftware.com/"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center space-x-2.5 text-xs sm:text-sm font-medium tracking-widest text-slate-300 hover:text-white transition-all transform hover:scale-105 group"
