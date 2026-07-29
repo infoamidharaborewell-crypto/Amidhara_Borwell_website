@@ -14,11 +14,25 @@ import ContactUs from './components/ContactUs'
 import WhatsappButton from './components/WhatsappButton'
 
 function App() {
-  const [showSplash, setShowSplash] = useState(true)
+  // Check if user has already seen splash screen in this session OR if they opened/refreshed a specific section URL
+  const [showSplash, setShowSplash] = useState(() => {
+    if (typeof window !== 'undefined') {
+      const hasSeen = sessionStorage.getItem('hasSeenSplash') === 'true'
+      const hasHash = window.location.hash.length > 1
+      if (hasSeen || hasHash) {
+        return false
+      }
+    }
+    return true
+  })
+
   const [currentPage, setCurrentPage] = useState('home')
 
   const handleSplashComplete = () => {
     setShowSplash(false)
+    if (typeof window !== 'undefined') {
+      sessionStorage.setItem('hasSeenSplash', 'true')
+    }
   }
 
   const handleNavigation = (page) => {
@@ -34,14 +48,15 @@ function App() {
 
   // Restore scroll position to exact section on page reload/refresh
   useEffect(() => {
-    if (!showSplash && typeof window !== 'undefined') {
+    if (typeof window !== 'undefined') {
       const hash = window.location.hash.replace('#', '')
       if (hash) {
+        setCurrentPage(hash)
         const el = document.getElementById(hash)
         if (el) {
           setTimeout(() => {
             el.scrollIntoView({ behavior: 'smooth' })
-          }, 100)
+          }, 150)
         }
       }
     }
@@ -91,7 +106,7 @@ function App() {
       {/* Splash Screen Overlay */}
       {showSplash && <SplashScreen onComplete={handleSplashComplete} />}
 
-      {/* Pre-rendered Main Website Content (Instant Reveal, Zero Lag) */}
+      {/* Pre-rendered Main Website Content */}
       <Logo3DSidebar />
       <Header onNavigate={handleNavigation} currentPage={currentPage} />
       <main id="main-content">
