@@ -23,9 +23,9 @@ const SplashScreen = ({ onComplete }) => {
           }, 300);
           return 100;
         }
-        return prev + 3;
+        return prev + 1.2;
       });
-    }, 30);
+    }, 50);
 
     return () => {
       clearTimeout(welcomeTimer);
