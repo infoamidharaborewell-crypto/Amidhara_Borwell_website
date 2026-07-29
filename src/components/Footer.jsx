@@ -64,7 +64,7 @@ const Footer = ({ onNavigate }) => {
                 href="https://wa.me/919106604895" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-green-600 transition-colors min-h-[44px] min-w-[44px]"
+                className="w-10 h-10 bg-[#25D366] hover:bg-[#20bd5a] text-white rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110 shadow-md shadow-emerald-900/40 min-h-[44px] min-w-[44px]"
                 title="WhatsApp"
                 aria-label="Amidhara Borewell WhatsApp"
               >
@@ -74,7 +74,7 @@ const Footer = ({ onNavigate }) => {
                 href="https://www.facebook.com/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors min-h-[44px] min-w-[44px]"
+                className="w-10 h-10 bg-[#1877F2] hover:bg-[#166fe5] text-white rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110 shadow-md shadow-blue-900/40 min-h-[44px] min-w-[44px]"
                 title="Facebook"
                 aria-label="Amidhara Borewell Facebook Page"
               >
@@ -84,7 +84,7 @@ const Footer = ({ onNavigate }) => {
                 href="https://www.instagram.com/amidhara_borewell?igsh=MWlzeGR2eWU1c3Juag==" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-pink-600 transition-colors min-h-[44px] min-w-[44px]"
+                className="w-10 h-10 bg-gradient-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888] hover:opacity-90 text-white rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110 shadow-md shadow-pink-900/40 min-h-[44px] min-w-[44px]"
                 title="Instagram"
                 aria-label="Amidhara Borewell Instagram Page"
               >
@@ -102,6 +102,7 @@ const Footer = ({ onNavigate }) => {
               <li><button onClick={() => scrollToSection('gallery')} className="text-gray-300 hover:text-white transition-colors">Gallery</button></li>
               <li><button onClick={() => scrollToSection('about')} className="text-gray-300 hover:text-white transition-colors">About Us</button></li>
               <li><button onClick={() => scrollToSection('product')} className="text-gray-300 hover:text-white transition-colors">Product</button></li>
+              <li><button onClick={() => scrollToSection('testimonials')} className="text-gray-300 hover:text-white transition-colors">Testimonials</button></li>
               <li><button onClick={() => scrollToSection('faq')} className="text-gray-300 hover:text-white transition-colors">FAQ</button></li>
               <li><button onClick={() => scrollToSection('contact')} className="text-gray-300 hover:text-white transition-colors">Contact</button></li>
             </ul>

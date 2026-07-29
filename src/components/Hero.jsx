@@ -12,7 +12,7 @@ const Hero = () => {
   }
 
   return (
-    <section id="home" className="pt-24 pb-16 bg-gradient-to-br from-blue-50 to-blue-100 relative overflow-hidden water-wave-bg water-surface min-h-screen">
+    <section id="home" className="pt-32 pb-20 bg-gradient-to-br from-slate-50 via-blue-50/60 to-sky-100/50 relative overflow-hidden water-wave-bg water-surface min-h-[90vh] flex items-center">
       <WaterEffects variant='waves'/>
       <div className="hidden md:block water-bubbles">
         <div className="water-bubble"></div>
@@ -33,11 +33,11 @@ const Hero = () => {
         </div>
       </div>
       
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center md:text-left">
           {/* Mobile 3D Spinning Logo Card - Visible on Mobile Views (< 1024px) */}
           <div className="lg:hidden flex justify-center md:justify-start mb-6">
-            <div className="bg-white rounded-[24px] shadow-2xl p-3 border-2 border-blue-300/80 hover:border-blue-500 transition-all duration-300 transform hover:scale-105 inline-block">
+            <div className="bg-white/90 backdrop-blur-md rounded-3xl shadow-xl p-3 border border-blue-200 hover:border-blue-400 transition-all duration-300 transform hover:scale-105 inline-block">
               <div className="w-24 h-32 flex items-center justify-center spin-logo">
                 <img
                   src="/images/amidhara-logo-cutout.png"
@@ -52,16 +52,22 @@ const Hero = () => {
             </div>
           </div>
 
-          <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 relative leading-tight" style={{ zIndex: 20 }}>
-            Professional Borewell &amp; Pump Installation Services in Vadodara
+          {/* Badge */}
+          <div className="inline-flex items-center space-x-2 bg-blue-100/80 border border-blue-200/90 backdrop-blur-sm px-4 py-1.5 rounded-full text-xs md:text-sm font-bold text-blue-800 mb-6 shadow-sm">
+            <span className="w-2 h-2 rounded-full bg-blue-600 animate-pulse"></span>
+            <span>Vadodara's Most Trusted Borewell Specialist</span>
+          </div>
+
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 mb-6 relative leading-tight tracking-tight" style={{ zIndex: 20 }}>
+            Professional Borewell &amp; Pump Installation Services in <span className="bg-gradient-to-r from-blue-700 via-blue-600 to-indigo-700 bg-clip-text text-transparent">Vadodara</span>
           </h1>
-          <p className="text-xl text-gray-700 mb-8 relative" style={{ zIndex: 20 }}>
+          <p className="text-lg md:text-xl text-slate-600 mb-8 relative max-w-2xl font-medium leading-relaxed" style={{ zIndex: 20 }}>
             Your trusted partner for reliable water solutions. We provide expert borewell drilling, installation, and maintenance services with years of experience.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start relative" style={{ zIndex: 20 }}>
             <button
               onClick={scrollToContact}
-              className="bg-gradient-to-r from-blue-700 via-blue-800 to-indigo-800 hover:from-blue-800 hover:to-indigo-900 text-white px-8 py-4 rounded-xl text-lg font-bold transition-all shadow-xl shadow-blue-700/25 water-ripple-effect relative overflow-hidden min-h-[50px]"
+              className="bg-gradient-to-r from-blue-700 via-blue-800 to-indigo-800 hover:from-blue-800 hover:to-indigo-900 text-white px-8 py-4 rounded-2xl text-lg font-bold transition-all shadow-xl shadow-blue-700/25 hover:shadow-2xl hover:shadow-blue-700/35 transform hover:-translate-y-0.5 water-ripple-effect relative overflow-hidden min-h-[52px]"
               aria-label="Get Free Quote contact button"
             >
               Get Free Quote
@@ -71,7 +77,7 @@ const Hero = () => {
                 const el = document.getElementById('services')
                 if (el) el.scrollIntoView({ behavior: 'smooth' })
               }}
-              className="bg-white border-2 border-blue-700 text-blue-800 hover:bg-blue-50 px-8 py-4 rounded-xl text-lg font-bold transition-colors shadow-md min-h-[50px]"
+              className="bg-white/90 backdrop-blur-md border-2 border-blue-700/20 hover:border-blue-700 text-blue-800 hover:bg-blue-50/80 px-8 py-4 rounded-2xl text-lg font-bold transition-all shadow-sm hover:shadow-md min-h-[52px]"
               aria-label="Explore Services section button"
             >
               Our Services
@@ -81,34 +87,34 @@ const Hero = () => {
         
         {/* Features */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16 max-w-5xl mx-auto relative" style={{ zIndex: 20 }}>
-          <div className="bg-white p-6 rounded-lg shadow-md water-ripple-effect water-shimmer relative z-10">
-            <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4 mx-auto">
-              <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+          <div className="bg-white/80 backdrop-blur-md p-7 rounded-2xl shadow-xl shadow-slate-200/50 border border-white hover:border-blue-200 transition-all duration-300 hover:-translate-y-1 relative z-10">
+            <div className="w-14 h-14 bg-gradient-to-br from-blue-600 to-blue-800 text-white rounded-2xl shadow-md shadow-blue-600/30 flex items-center justify-center mb-4 mx-auto">
+              <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
             </div>
-            <h3 className="text-xl font-semibold text-gray-800 mb-2 text-center">Expert Team</h3>
-            <p className="text-gray-600 text-center">Experienced professionals with years of expertise</p>
+            <h3 className="text-xl font-bold text-slate-900 mb-2 text-center">Expert Team</h3>
+            <p className="text-slate-600 text-center text-sm font-medium">Experienced professionals with years of expertise</p>
           </div>
           
-          <div className="bg-white p-6 rounded-lg shadow-md water-ripple-effect water-shimmer relative z-10">
-            <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4 mx-auto">
-              <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+          <div className="bg-white/80 backdrop-blur-md p-7 rounded-2xl shadow-xl shadow-slate-200/50 border border-white hover:border-blue-200 transition-all duration-300 hover:-translate-y-1 relative z-10">
+            <div className="w-14 h-14 bg-gradient-to-br from-blue-600 to-blue-800 text-white rounded-2xl shadow-md shadow-blue-600/30 flex items-center justify-center mb-4 mx-auto">
+              <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
             </div>
-            <h3 className="text-xl font-semibold text-gray-800 mb-2 text-center">24/7 Support</h3>
-            <p className="text-gray-600 text-center">Round-the-clock service and emergency support</p>
+            <h3 className="text-xl font-bold text-slate-900 mb-2 text-center">24/7 Support</h3>
+            <p className="text-slate-600 text-center text-sm font-medium">Round-the-clock service and emergency support</p>
           </div>
           
-          <div className="bg-white p-6 rounded-lg shadow-md water-ripple-effect water-shimmer relative z-10">
-            <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4 mx-auto">
-              <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          <div className="bg-white/80 backdrop-blur-md p-7 rounded-2xl shadow-xl shadow-slate-200/50 border border-white hover:border-blue-200 transition-all duration-300 hover:-translate-y-1 relative z-10">
+            <div className="w-14 h-14 bg-gradient-to-br from-blue-600 to-blue-800 text-white rounded-2xl shadow-md shadow-blue-600/30 flex items-center justify-center mb-4 mx-auto">
+              <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
             </div>
-            <h3 className="text-xl font-semibold text-gray-800 mb-2 text-center">Affordable Prices</h3>
-            <p className="text-gray-600 text-center">Competitive pricing with transparent quotes</p>
+            <h3 className="text-xl font-bold text-slate-900 mb-2 text-center">Affordable Prices</h3>
+            <p className="text-slate-600 text-center text-sm font-medium">Competitive pricing with transparent quotes</p>
           </div>
         </div>
 

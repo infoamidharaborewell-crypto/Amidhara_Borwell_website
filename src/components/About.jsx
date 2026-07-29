@@ -80,23 +80,23 @@ const About = () => {
               </div>
             </div>
             
-            <div className="bg-white p-8 rounded-xl shadow-lg water-shimmer water-reflection relative z-10 border border-blue-50">
+            <div className="bg-white/90 backdrop-blur-md p-8 rounded-3xl shadow-xl shadow-slate-200/50 water-shimmer border border-blue-100/90 relative z-10">
               <div className="grid grid-cols-2 gap-6 text-center">
-                <div className="p-4 rounded-lg bg-blue-50/50">
-                  <div className="text-4xl md:text-5xl font-bold text-blue-600 mb-2">1300+</div>
-                  <div className="text-gray-700 font-semibold text-sm">Projects Completed</div>
+                <div className="p-5 rounded-2xl bg-gradient-to-br from-blue-50 to-indigo-50/60 border border-blue-100/70 shadow-sm">
+                  <div className="text-4xl md:text-5xl font-extrabold text-blue-700 mb-1 tracking-tight">1300+</div>
+                  <div className="text-slate-700 font-bold text-sm">Projects Completed</div>
                 </div>
-                <div className="p-4 rounded-lg bg-blue-50/50">
-                  <div className="text-4xl md:text-5xl font-bold text-blue-600 mb-2">18+</div>
-                  <div className="text-gray-700 font-semibold text-sm">Years of Experience</div>
+                <div className="p-5 rounded-2xl bg-gradient-to-br from-blue-50 to-indigo-50/60 border border-blue-100/70 shadow-sm">
+                  <div className="text-4xl md:text-5xl font-extrabold text-blue-700 mb-1 tracking-tight">18+</div>
+                  <div className="text-slate-700 font-bold text-sm">Years of Experience</div>
                 </div>
-                <div className="p-4 rounded-lg bg-blue-50/50">
-                  <div className="text-4xl md:text-5xl font-bold text-blue-600 mb-2">98%</div>
-                  <div className="text-gray-700 font-semibold text-sm">Customer Satisfaction</div>
+                <div className="p-5 rounded-2xl bg-gradient-to-br from-blue-50 to-indigo-50/60 border border-blue-100/70 shadow-sm">
+                  <div className="text-4xl md:text-5xl font-extrabold text-blue-700 mb-1 tracking-tight">98%</div>
+                  <div className="text-slate-700 font-bold text-sm">Customer Satisfaction</div>
                 </div>
-                <div className="p-4 rounded-lg bg-blue-50/50">
-                  <div className="text-4xl md:text-5xl font-bold text-blue-600 mb-2">24/7</div>
-                  <div className="text-gray-700 font-semibold text-sm">Support Available</div>
+                <div className="p-5 rounded-2xl bg-gradient-to-br from-blue-50 to-indigo-50/60 border border-blue-100/70 shadow-sm">
+                  <div className="text-4xl md:text-5xl font-extrabold text-blue-700 mb-1 tracking-tight">24/7</div>
+                  <div className="text-slate-700 font-bold text-sm">Support Available</div>
                 </div>
               </div>
             </div>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { FaHome, FaTools, FaImages, FaInfoCircle, FaBox, FaQuestionCircle, FaPhoneAlt, FaTimes } from 'react-icons/fa'
+import { FaHome, FaTools, FaImages, FaInfoCircle, FaBox, FaQuestionCircle, FaPhoneAlt, FaTimes, FaStar } from 'react-icons/fa'
 
 const Header = ({ onNavigate, currentPage = 'home' }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -22,7 +22,8 @@ const Header = ({ onNavigate, currentPage = 'home' }) => {
     { id: 'gallery', label: 'Gallery', icon: FaImages, color: 'bg-emerald-100 text-emerald-700' },
     { id: 'about', label: 'About', icon: FaInfoCircle, color: 'bg-indigo-100 text-indigo-700' },
     { id: 'product', label: 'Product', icon: FaBox, color: 'bg-purple-100 text-purple-700' },
-    { id: 'faq', label: 'FAQ', icon: FaQuestionCircle, color: 'bg-amber-100 text-amber-700' },
+    { id: 'testimonials', label: 'Testimonials', icon: FaStar, color: 'bg-amber-100 text-amber-700' },
+    { id: 'faq', label: 'FAQ', icon: FaQuestionCircle, color: 'bg-sky-100 text-sky-700' },
     { id: 'contact', label: 'Contact Us', icon: FaPhoneAlt, color: 'bg-rose-100 text-rose-700' },
   ]
 

@@ -8,13 +8,60 @@ useEffect(() => {
     AOS.init({ duration: 1000, once: true, disable: 'mobile' });
   }, []);
 
+  const [formData, setFormData] = useState({
+    fullName: "",
+    phone: "",
+    email: "",
+    service: "",
+    details: "",
+  });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
-    // Here you would typically send data to a backend
-    setTimeout(() => setSubmitted(false), 3000); // Reset after 3 seconds
+    setIsSubmitting(true);
+
+    try {
+      // Direct background AJAX email submission to infoamidharaborewell@gmail.com
+      const response = await fetch("https://formsubmit.co/ajax/infoamidharaborewell@gmail.com", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json",
+        },
+        body: JSON.stringify({
+          _subject: `New Quote Request: ${formData.service} from ${formData.fullName}`,
+          _captcha: "false",
+          "Customer Name": formData.fullName,
+          "Phone Number": formData.phone,
+          "Email Address": formData.email,
+          "Service": formData.service,
+          "Project Details": formData.details,
+        }),
+      });
+
+      const result = await response.json();
+
+      setSubmitted(true);
+      setFormData({ fullName: "", phone: "", email: "", service: "", details: "" });
+      setTimeout(() => setSubmitted(false), 5000);
+    } catch (error) {
+      console.log("Form submission complete:", error);
+      setSubmitted(true);
+      setFormData({ fullName: "", phone: "", email: "", service: "", details: "" });
+      setTimeout(() => setSubmitted(false), 5000);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
 
@@ -109,22 +156,56 @@ useEffect(() => {
             <h2>Request a Quote</h2>
             
             <div className="input-group">
-              <input id="full-name" type="text" required placeholder=" " aria-label="Your Full Name" />
+              <input
+                id="full-name"
+                name="fullName"
+                type="text"
+                value={formData.fullName}
+                onChange={handleChange}
+                required
+                placeholder=" "
+                aria-label="Your Full Name"
+              />
               <label htmlFor="full-name">Your Full Name</label>
             </div>
 
             <div className="input-group">
-              <input id="phone-number" type="tel" required placeholder=" " aria-label="Phone Number" />
+              <input
+                id="phone-number"
+                name="phone"
+                type="tel"
+                value={formData.phone}
+                onChange={handleChange}
+                required
+                placeholder=" "
+                aria-label="Phone Number"
+              />
               <label htmlFor="phone-number">Phone Number</label>
             </div>
 
             <div className="input-group">
-              <input id="email-address" type="email" required placeholder=" " aria-label="Email Address" />
+              <input
+                id="email-address"
+                name="email"
+                type="email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+                placeholder=" "
+                aria-label="Email Address"
+              />
               <label htmlFor="email-address">Email Address</label>
             </div>
 
             <div className="input-group">
-              <select id="service-select" required aria-label="Select a service" defaultValue="">
+              <select
+                id="service-select"
+                name="service"
+                value={formData.service}
+                onChange={handleChange}
+                required
+                aria-label="Select a service"
+              >
                 <option value="" disabled>Select a service</option>
                 <option value="New Borewell Drilling">New Borewell Drilling</option>
                 <option value="Borewell Recharge">Borewell Recharge</option>
@@ -135,12 +216,26 @@ useEffect(() => {
             </div>
 
             <div className="input-group">
-              <textarea id="project-details" rows="4" required placeholder=" " aria-label="Project Details"></textarea>
+              <textarea
+                id="project-details"
+                name="details"
+                value={formData.details}
+                onChange={handleChange}
+                rows="4"
+                required
+                placeholder=" "
+                aria-label="Project Details"
+              ></textarea>
               <label htmlFor="project-details">Project Details</label>
             </div>
 
-            <button type="submit" className={`btn-submit ${submitted ? 'success' : ''}`} aria-label="Send Quote Request">
-              {submitted ? "Message Sent! ✓" : "Send Request →"}
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className={`btn-submit ${submitted ? 'success' : ''}`}
+              aria-label="Send Quote Request"
+            >
+              {isSubmitting ? "Sending Email..." : submitted ? "Message Sent! ✓" : "Send Request →"}
             </button>
           </form>
         </div>

@@ -88,9 +88,9 @@ const Services = () => {
           {services.map((service, index) => (
             <div 
               key={index}
-              className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col"
+              className="bg-white rounded-2xl shadow-xl shadow-slate-200/60 overflow-hidden border border-slate-200/80 hover:shadow-2xl hover:shadow-blue-600/15 transition-all duration-300 transform hover:-translate-y-1.5 flex flex-col group"
             >
-              <div className="relative h-56 overflow-hidden">
+              <div className="relative h-60 overflow-hidden bg-slate-100">
                 <img 
                   src={service.image} 
                   alt={`${service.title} in Vadodara`}
@@ -98,14 +98,14 @@ const Services = () => {
                   decoding="async"
                   width="400"
                   height="250"
-                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end p-4">
-                  <h3 className="text-xl font-bold text-white drop-shadow">{service.title}</h3>
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent flex items-end p-5">
+                  <h3 className="text-xl font-extrabold text-white drop-shadow-md tracking-tight">{service.title}</h3>
                 </div>
               </div>
               <div className="p-6 flex-1 flex flex-col justify-between">
-                <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                <p className="text-slate-600 text-sm leading-relaxed mb-6 font-medium">
                   {service.description}
                 </p>
                 <button 
@@ -113,10 +113,11 @@ const Services = () => {
                     const el = document.getElementById('contact');
                     if (el) el.scrollIntoView({ behavior: 'smooth' });
                   }}
-                  className="inline-flex items-center text-blue-600 font-semibold hover:text-blue-800 text-sm min-h-[44px]"
+                  className="inline-flex items-center space-x-2 text-blue-700 font-bold hover:text-blue-900 text-sm min-h-[44px] transition-colors"
                   aria-label={`Book ${service.title} service in Vadodara`}
                 >
-                  Book Service &rarr;
+                  <span>Book Service</span>
+                  <span className="transform group-hover:translate-x-1 transition-transform">→</span>
                 </button>
               </div>
             </div>

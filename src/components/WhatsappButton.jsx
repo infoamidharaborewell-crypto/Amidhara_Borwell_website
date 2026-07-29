@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { FaPhone, FaWhatsapp } from "react-icons/fa";
+import { FaPhone, FaWhatsapp, FaTimes } from "react-icons/fa";
 import { FiMessageSquare } from "react-icons/fi";
 import "./WhatsappButton.css";
 
 const WhatsappButton = () => {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
 
   const phone = "919825126833";
   const whatsappMsg = "Hello Amidhara Borewell, I need help with borewell services...";
@@ -38,11 +38,11 @@ const WhatsappButton = () => {
 
       {/* Main Toggle Button */}
       <button
-        className="w-12 h-12 bg-emerald-500 hover:bg-emerald-600 text-white rounded-full flex items-center justify-center shadow-xl transition-transform hover:scale-110"
+        className="w-12 h-12 bg-emerald-500 hover:bg-emerald-600 text-white rounded-full flex items-center justify-center shadow-xl transition-all hover:scale-110"
         onClick={() => setOpen(!open)}
         aria-label="Toggle contact menu"
       >
-        <FiMessageSquare className="text-xl" />
+        {open ? <FaTimes className="text-xl" /> : <FiMessageSquare className="text-xl" />}
       </button>
     </div>
   );
