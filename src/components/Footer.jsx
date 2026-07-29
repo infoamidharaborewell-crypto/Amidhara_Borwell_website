@@ -136,8 +136,24 @@ const Footer = ({ onNavigate }) => {
         </div>
 
         {/* Bottom */}
-        <div className="border-t border-gray-800 pt-8 mt-8 text-center text-gray-400 text-sm">
-          <p>© {new Date().getFullYear()} TEJASKP AI SOFTWARE - All rights reserved.</p>
+        <div className="border-t border-gray-800 pt-8 mt-8 flex flex-col items-center justify-center space-y-4 text-center text-gray-400 text-sm">
+          <a
+            href="https://tejaskpai.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center space-x-2.5 text-xs sm:text-sm font-medium tracking-widest text-slate-300 hover:text-white transition-all transform hover:scale-105 group"
+          >
+            <span className="text-gray-400 group-hover:text-gray-200">POWERED BY</span>
+            <img 
+              src="/tejaskp_logo.png" 
+              alt="TEJASKP AI SOFTWARE Logo" 
+              className="w-7 h-7 object-cover rounded-full border border-amber-500/60 shadow-md shadow-amber-950/40"
+            />
+            <span className="text-sky-400 font-semibold tracking-wider group-hover:text-sky-300 group-hover:underline">
+              TEJASKP AI SOFTWARE
+            </span>
+          </a>
+          <p className="text-xs text-gray-500">© {new Date().getFullYear()} Amidhara Borewell - All rights reserved.</p>
         </div>
       </div>
     </footer>
