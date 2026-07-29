@@ -10,24 +10,24 @@ const SplashScreen = ({ onComplete }) => {
     // Trigger smooth slide-up animation for "Welcome to" from bottom
     const welcomeTimer = setTimeout(() => {
       setShowWelcome(true);
-    }, 100);
+    }, 50);
 
     const interval = setInterval(() => {
       setProgress((prev) => {
         if (prev >= 100) {
           clearInterval(interval);
-          // Hold for 0.5 seconds after typing completes before entering website
+          // Hold briefly (0.2 seconds) then perform fast curtain transition
           setTimeout(() => {
             setIsFadingOut(true);
             setTimeout(() => {
               onComplete();
-            }, 750);
-          }, 500);
+            }, 350);
+          }, 200);
           return 100;
         }
-        return prev + 2;
+        return prev + 3;
       });
-    }, 65);
+    }, 25);
 
     return () => {
       clearTimeout(welcomeTimer);
@@ -39,7 +39,7 @@ const SplashScreen = ({ onComplete }) => {
     setIsFadingOut(true);
     setTimeout(() => {
       onComplete();
-    }, 500);
+    }, 250);
   };
 
   // SVG Circular Progress Calculations
@@ -54,24 +54,24 @@ const SplashScreen = ({ onComplete }) => {
 
   return (
     <div className="fixed inset-0 z-50 overflow-hidden font-sans pointer-events-auto">
-      {/* Top Liquid Curtain Sweep */}
+      {/* Top Liquid Curtain Sweep (Fast 350ms transition) */}
       <div
-        className={`absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-slate-950 via-blue-950 to-slate-900 z-40 transition-transform duration-700 ease-[cubic-bezier(0.77,0,0.175,1)] ${
+        className={`absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-slate-950 via-blue-950 to-slate-900 z-40 transition-transform duration-350 ease-[cubic-bezier(0.77,0,0.175,1)] ${
           isFadingOut ? "-translate-y-full" : "translate-y-0"
         }`}
       ></div>
 
-      {/* Bottom Liquid Curtain Sweep */}
+      {/* Bottom Liquid Curtain Sweep (Fast 350ms transition) */}
       <div
-        className={`absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-slate-950 via-blue-950 to-slate-900 z-40 transition-transform duration-700 ease-[cubic-bezier(0.77,0,0.175,1)] ${
+        className={`absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-slate-950 via-blue-950 to-slate-900 z-40 transition-transform duration-350 ease-[cubic-bezier(0.77,0,0.175,1)] ${
           isFadingOut ? "translate-y-full" : "translate-y-0"
         }`}
       ></div>
 
       {/* Main Content Viewport */}
       <div
-        className={`fixed inset-0 z-50 flex items-center justify-center transition-all duration-700 ${
-          isFadingOut ? "opacity-0 scale-110 blur-xl pointer-events-none" : "opacity-100 scale-100"
+        className={`fixed inset-0 z-50 flex items-center justify-center transition-all duration-350 ${
+          isFadingOut ? "opacity-0 scale-105 blur-sm pointer-events-none" : "opacity-100 scale-100"
         }`}
       >
         {/* Background Animated Water Glow & Floating Bubbles */}
@@ -100,7 +100,7 @@ const SplashScreen = ({ onComplete }) => {
         </button>
 
         {/* Main Glassmorphic Container Card */}
-        <div className="relative z-50 w-11/12 max-w-lg bg-white/10 backdrop-blur-2xl border border-white/20 rounded-3xl p-8 md:p-10 shadow-2xl shadow-blue-950/90 text-center flex flex-col items-center justify-center space-y-8 transition-all duration-500 min-h-[460px]">
+        <div className="relative z-50 w-11/12 max-w-lg bg-white/10 backdrop-blur-2xl border border-white/20 rounded-3xl p-8 md:p-10 shadow-2xl shadow-blue-950/90 text-center flex flex-col items-center justify-center space-y-8 transition-all duration-300 min-h-[460px]">
           
           {/* Top: Spinning 3D Logo with Glowing Circular SVG Ring */}
           <div className="relative flex items-center justify-center">
@@ -124,7 +124,7 @@ const SplashScreen = ({ onComplete }) => {
                 strokeDashoffset={strokeDashoffset}
                 strokeLinecap="round"
                 fill="transparent"
-                className="transition-all duration-150 ease-out"
+                className="transition-all duration-100 ease-out"
               />
               <defs>
                 <linearGradient id="waterGradientSplash" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -145,11 +145,11 @@ const SplashScreen = ({ onComplete }) => {
             </div>
           </div>
 
-          {/* Welcome Typography: "Welcome to" slides up from bottom, "AMIDHARA BOREWELL" has live typewriter effect */}
+          {/* Welcome Typography */}
           <div className="transition-all duration-300 min-h-[90px] flex flex-col justify-center overflow-hidden">
             <h1
-              className={`text-3xl sm:text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-yellow-200 to-amber-400 mb-2 tracking-tight drop-shadow-[0_2px_12px_rgba(245,158,11,0.4)] transition-all duration-700 transform ${
-                showWelcome ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
+              className={`text-3xl sm:text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-yellow-200 to-amber-400 mb-2 tracking-tight drop-shadow-[0_2px_12px_rgba(245,158,11,0.4)] transition-all duration-500 transform ${
+                showWelcome ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
               }`}
             >
               Welcome to
