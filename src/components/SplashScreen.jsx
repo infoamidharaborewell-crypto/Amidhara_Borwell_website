@@ -51,24 +51,24 @@ const SplashScreen = ({ onComplete }) => {
   const line2Typed = line2Full.substring(0, typedCount);
 
   return (
-    <div className="fixed inset-0 z-50 overflow-hidden font-sans pointer-events-auto">
+    <div className="fixed inset-0 z-[99999] overflow-hidden font-sans pointer-events-auto">
       {/* Top Liquid Curtain Sweep (Fast 300ms transition) */}
       <div
-        className={`absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-slate-950 via-blue-950 to-slate-900 z-40 transform-gpu transition-transform duration-300 ease-out ${
+        className={`absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-slate-950 via-blue-950 to-slate-900 z-[99999] transform-gpu transition-transform duration-300 ease-out ${
           isFadingOut ? "-translate-y-full" : "translate-y-0"
         }`}
       ></div>
 
       {/* Bottom Liquid Curtain Sweep (Fast 300ms transition) */}
       <div
-        className={`absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-slate-950 via-blue-950 to-slate-900 z-40 transform-gpu transition-transform duration-300 ease-out ${
+        className={`absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-slate-950 via-blue-950 to-slate-900 z-[99999] transform-gpu transition-transform duration-300 ease-out ${
           isFadingOut ? "translate-y-full" : "translate-y-0"
         }`}
       ></div>
 
       {/* Main Content Viewport */}
       <div
-        className={`fixed inset-0 z-50 flex items-center justify-center transform-gpu transition-all duration-300 ${
+        className={`fixed inset-0 z-[99999] flex items-center justify-center transform-gpu transition-all duration-300 ${
           isFadingOut ? "opacity-0 scale-105 blur-sm pointer-events-none" : "opacity-100 scale-100"
         }`}
       >
@@ -90,7 +90,7 @@ const SplashScreen = ({ onComplete }) => {
         {/* Top Right Skip Button */}
         <button
           onClick={handleSkip}
-          className="absolute top-6 right-6 z-50 px-4 py-2 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 backdrop-blur-md text-xs sm:text-sm font-bold text-white transition-all transform hover:scale-105 shadow-lg flex items-center space-x-1.5"
+          className="absolute top-6 right-6 z-[100000] px-4 py-2 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 backdrop-blur-md text-xs sm:text-sm font-bold text-white transition-all transform hover:scale-105 shadow-lg flex items-center space-x-1.5"
           aria-label="Skip splash screen intro"
         >
           <span>Skip Intro</span>
@@ -98,7 +98,7 @@ const SplashScreen = ({ onComplete }) => {
         </button>
 
         {/* Main Glassmorphic Container Card */}
-        <div className="relative z-50 w-11/12 max-w-lg bg-white/10 backdrop-blur-2xl border border-white/20 rounded-3xl p-8 md:p-10 shadow-2xl shadow-blue-950/90 text-center flex flex-col items-center justify-center space-y-8 transition-all duration-300 min-h-[460px]">
+        <div className="relative z-[100000] w-11/12 max-w-lg bg-white/10 backdrop-blur-2xl border border-white/20 rounded-3xl p-8 md:p-10 shadow-2xl shadow-blue-950/90 text-center flex flex-col items-center justify-center space-y-8 transition-all duration-300 min-h-[460px]">
           
           {/* Top: Spinning 3D Logo with Glowing Circular SVG Ring */}
           <div className="relative flex items-center justify-center">
@@ -161,10 +161,10 @@ const SplashScreen = ({ onComplete }) => {
             </h2>
           </div>
 
-          {/* Loading Progress Badge */}
+          {/* Loading Progress Badge (Percentage number removed as requested) */}
           <div className="px-5 py-2.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-md text-xs sm:text-sm font-bold text-cyan-300 shadow-md flex items-center space-x-2">
             <span className="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-ping"></span>
-            <span>Loading Pure Water Solutions... {progress}%</span>
+            <span>Loading Pure Water Solutions...</span>
           </div>
 
         </div>
